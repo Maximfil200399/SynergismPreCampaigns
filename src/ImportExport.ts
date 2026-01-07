@@ -421,13 +421,11 @@ export const promocodes = async (input: string | null, amount?: number) => {
     return Alert(i18next.t('importexport.comeBackSoon'))
   }
   if (
-    input === '23andme'
-    && !player.codes.get(48)
-    && G.isEvent
+    input === '23andme' && !player.codes.get(48) // Allow 23andme to be used even without an event
   ) {
     if (!player.dailyCodeUsed) {
       return Alert(
-        'This event code gives you another usage of code \'daily\'. Please use that code and try this event code again.'
+        'This code gives you another usage of code \'daily\'. Please use that code and try this event code again.'
       )
     }
 
