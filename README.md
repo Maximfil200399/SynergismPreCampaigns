@@ -22,9 +22,9 @@ NodeJS - https://nodejs.org/en/ (current, not LTS).
 To get a list of available commands in the Makefile, run `make help` or just `make`
 
 Current changes:
-Locked the Patreon bonus to 100% and disabled PseudoCoin upgrades (due to poor coding, the event/pseudocoin tabs are still there :derpsmith:)
-Added i18n to Platonic Upgrades
-Moved The Ultimate Pen to s277 and limited certain singularity challenges so they can't go above 277
-Achievements 45-47 (up to -20% taxes based on prestige time) have their effect maxed at all times
-Rewrote many, MANY descriptions for consistency, grammatical correctness, and just for the fun of it
-Made the code `23andme` usable at any time. Try using it once you've unlocked Octeracts!
+- Locked the Patreon bonus to 100% and disabled PseudoCoin upgrades (due to poor coding, the event/pseudocoin tabs are still there :derpsmith:)
+- Added i18n to Platonic Upgrades
+- Moved The Ultimate Pen to s277 and limited certain singularity challenges so they can't go above 277
+- Achievements 45-47 (up to -20% taxes based on prestige time) have their effect maxed at all times
+- Rewrote many, MANY descriptions for consistency, grammatical correctness, and just for the fun of it
+- Made the code `23andme` usable at any time. Try using it once you've unlocked Octeracts!
