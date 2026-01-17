@@ -921,7 +921,7 @@ export const singularityData: Record<
     minimumSingularity: 36,
     effect: (n: number) => {
       return {
-        bonus: n > 0,
+        bonus: 6.77 * n, // 7.77x Octeracts
         get desc () {
           return i18next.t(
             `singularity.data.divinePack.effect${n > 0 ? 'Have' : 'HaveNot'}`

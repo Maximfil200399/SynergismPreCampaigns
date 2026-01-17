@@ -831,7 +831,7 @@
       "goal": "Goal: Gain {{value}} Coins in challenge.",
       "per": {
         "1": "+1 free Ant level! Current: ",
-        "2": "+10% Ant speed [Multiplicative!] Current: ",
+        "2": "x1.1 Ant Speed [Multiplicative]! Current: ",
         "3": "SI Rune Exp +20%! Current: "
       },
       "first": "Unlock Talismans and Blessings! Also a Global Diamond Upgrade.",
@@ -902,7 +902,7 @@
       "restrictions": "Ascend and reach the goal, but taxes are much higher and grow with challenge completions. Ant production ^0.23.",
       "goal": "Goal: Complete Challenge 10 [Sadistic Challenge I] {{value}} times.",
       "per": {
-        "1": "Taxes -3.33%! Multiplicative! Current: ",
+        "1": "-3.33% Taxes [Multiplicative]! Current: ",
         "2": "+6 maximum to Talisman Level Cap! Current: ",
         "3": "+3% Spirit Power effectiveness! Current: "
       },
@@ -921,7 +921,7 @@
       "goal": "Goal: Complete Challenge 10 [Sadistic Challenge I] {{value}} times.",
       "per": {
         "1": "+50% stronger effect on researches 1x1 through 1x5. Current: ",
-        "2": "+1 research purchased per roomba tick (Immune to softcaps)! Current: ",
+        "2": "+1 research purchased per roomba tick! Current: ",
         "3": "+200 to Rune Caps! Current: "
       },
       "first": "Unlock 15 Researches, and a way to coalesce your power into the Singularity. Increase Corruption Cap by 2 levels, to 11! Finally, unlock two new corruptions! ;)",
@@ -1130,7 +1130,7 @@
       "67": "[Cx17] What the hell are in these??? Anyway, Metaphysics Talisman level cap is increased by 1,337.",
       "68": "[Cx18] What the heck! These aren't even cookies. +0.01% Quarks per level purchased of this upgrade. +5% more at level 1,000!",
       "69": "[Cx19] Cookies that you'll never remember again. +12% Golden Quarks this Singularity.",
-      "70": "[Cx20] The pinnacle of baking. Nothing you'll eat will taste better than this. Gain +0.01% more Octeracts if the average level of all corruptions is at a minimum of 14.",
+      "70": "[Cx20] The pinnacle of baking. Nothing you'll eat will taste better than this. Gain +0.01% more Octeracts if the sum of real Corruption levels is at least 112.",
       "71": "[Cx21] For each talisman rarity upgrade, multiply Obtainium gain by 1.04!",
       "72": "[Cx22] For each talisman rarity upgrade, multiply Offering gain by 1.04!",
       "73": "[Cx23] Each level adds 1 bonus level to the Infinite Ascent rune!",
@@ -1408,7 +1408,7 @@
       "calculator3": "The PL-AT Ω is infused with some Unobtainium, which is epic! But furthermore, it reduces the variance of Quarks by code 'add' by 10% per level, which makes you more likely to get the maximum multiplier. It also has the ability to give +60 seconds to Ascension Timer per level using that code.",
       "calculator4": "The PL-AT δ runs at 4,096Hz, which is a huge improvement over previous models. Add attempts refill 4% faster per level! Final level adds 32 additional capacity!",
       "calculator5": "The PL-AT Γ model somehow performs more 'powerful' computations, whatever that means. +6 seconds of GQ Export timer per level. +1 capacity every 10 levels, with 6 more at final level!",
-      "calculator6": "The PL-AT _ model was made by Derpsmith, before he was banished from the industry forever. Gain 1 Octeract tick per usage per level. Final level grants 24 additional capacity!",
+      "calculator6": "The PL-AT _ model was made by Derpsmith, before he was banished from the industry forever. Gain 1 Octeract tick (each tick is 1 second) per usage per level. Final level grants 24 additional capacity!",
       "calculator7": "The PL-AT ΩΩ model was made by Derpsmith Ω, before he was banished from the industry forever. Gain 1 second of Blueberry Time per usage per level. Final level grants 48 additional capacity!",
       "constantEX": "The merchant has one last trick up its sleeve: It can augment your second constant upgrade to be marginally better, but it'll cost an arm and a leg! Instead of the cap being 10% (or 11% with achievements) it will be raised by 1% per level.",
       "powderEX": "Platonic himself gives you 2% better conversion rate on Overflux Orbs to Powder per level. This activates when Orbs expire.",
@@ -1581,7 +1581,7 @@
       "description": "(Hover for more details. Perks in <span style=\"color: gold\">gold text</span> were added or improved in this Singularity)",
       "welcometoSingularity": {
         "name": "Welcome to Singularity!",
-        "default": "Welcome to the Singularity! As a perk for reaching this milestone: you can now autocraft Hepteracts (when you unlock them again) and Platonic Upgrades will BuyMax if they are affordable!"
+        "default": "Welcome to the Singularity! As a reward for reaching this milestone, you have unlocked automation for crafting Hepteracts and you can bulk buy Platonic Upgrades!"
       },
       "unlimitedGrowth": {
         "name": "Unlimited Growth",
@@ -1948,7 +1948,7 @@
       },
       "divinePack": {
         "name": "Divine Pack",
-        "description": "OHHHHH. Gain +10% Quarks, and multiply Octeract gain by 7.77 if all corruptions are set to at least 14.",
+        "description": "OHHHHH. Gain +10% Quarks, and multiply Octeract gain by 7.77 if your sum of real Corruption levels is at least 112.",
         "effectHave": "You have found the reason for existence.",
         "effectHaveNot": "You have not found the reason for existence."
       },
@@ -3409,9 +3409,9 @@
       "platonic14": "Coin gain ^1.55, but only in Challenge 15.",
       "platonic15": "You begin to find the start of the abyss... \nCoin gain ^1.1 in C15. \n+25% Challenge 15 Exponent. \n+0.2% Ascension Speed per Corruption level. \nx1.01 all Cubes per C9 completion. \n+30% Quarks. \nx1e250 Tesseract Building production. \nx2 Ascension Count. \n+30 Reincarnation Challenge cap. \n+20 Ascension Challenge cap. \nFinally, x6 Offerings and Obtainium (Uncorruptable)! \nTalk about a deep dive...",
       "platonic16": "+1% Overflux Powder conversion rate per level. \n+2% Ascension Count per level. \nUp to +2% Ascension Count per level, based on Overflux Powder. \nFinally, x(Overflux Powder+1)^(10*level) Tesseract Building production!",
-      "platonic17": "If this is bought, Viscosity's score multiplier is raised to 3+(0.04*level)!",
+      "platonic17": "If this is bought, Viscosity's score multiplier is raised to 3+(0.04*level) if it's set to 10 or higher!",
       "platonic18": "+0.1% to Constant Upgrade 1's effect per level! \nAlso, +0.3% to Constant Upgrade 2's cap per level!",
-      "platonic19": "Each level of this adds level/750 (~0.00133) to the Chronos Hepteract's diminishing return exponent! (Base: 1/6)",
+      "platonic19": "This adds level/750 (~0.00133) to the Chronos Hepteract's diminishing return exponent! (Base: 1/6)",
       "platonic20": "You know, maybe some things should be left unbought.",
       "platonic20Sing": "Unlock Antiquities of Ant God!"
       }
@@ -3613,8 +3613,8 @@
     "autoUpgradeOff": "Auto Upgrades: [OFF]",
     "upgradeMaxIfPossible": "Upgrade: MAX Wow! Levels",
     "upgradeOneLevelWow": "Upgrade: 1 Wow! Level",
-    "saveOfferingsOn": "Save Offerings [ON]",
-    "saveOfferingsOff": "Save Offerings [OFF]",
+    "buyMaxOn": "Buy Max [ON]",
+    "buyMaxOff": "Buy Max [OFF]",
     "modeTime": "Mode: TIME",
     "modeAmount": "Mode: AMOUNT",
     "modePercentage": "Mode: PERCENTAGE"
@@ -3634,7 +3634,7 @@
     "singularityMessage1": "You have reached the end of the game, on Singularity #{{x}}. Platonic and the Ant God are proud of you.",
     "singularityMessage2": "You may choose to sit on your laurels, and consider the game 'beaten', or you may do something more interesting.",
     "singularityMessage3": "You're too powerful for this current universe. The multiverse of Synergism is truly endless, but out there are even more challenging universes parallel to your very own.",
-    "singularityMessage4": "Start anew, and enter Singularity #{{x}}. Your next universe is harder than your current one, but unlock a permanent +10% Quark Bonus, +10% Ascension Count Bonus, and Gain {{y}} Golden Quarks, which can purchase game-changing endgame upgrades [Boosted by {{z}}% due to patreon bonus!].",
+    "singularityMessage4": "Start anew, and enter Singularity #{{x}}. Your next universe is harder than your current one, but you will unlock certain bonuses and Gain {{y}} Golden Quarks, which can purchase game-changing endgame upgrades.",
     "singularityMessage5": "However, all your past accomplishments are gone! ALL Challenges, Refundable Shop upgrades, Upgrade Tab, Runes, All Cube upgrades, All Cube Openings, Hepteracts (Except for your Quark Hepteracts), Achievements will be wiped clean.",
     "singularityConfirm0": "Do you wish to start Singularity #{{x}}? Your next universe is harder but you will gain {{y}} Golden Quarks.",
     "singularityConfirm1": "So, what do you say? Do you wish to enter the Singularity?",

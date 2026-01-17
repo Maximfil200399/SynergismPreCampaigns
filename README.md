@@ -28,3 +28,7 @@ Current changes:
 - Achievements 45-47 (up to -20% taxes based on prestige time) have their effect maxed at all times
 - Rewrote many, MANY descriptions for consistency, grammatical correctness, and just for the fun of it
 - Made the code `23andme` usable at any time. Try using it once you've unlocked Octeracts!
+- Attempted to improve Stats for Nerds a little by making it more consistent
+- Fixed Divine Pack not giving 7.77x Octeracts as advertised
+- Replaced the 'Save Offerings' toggle with a 'Buy Max' toggle for all you singular fellows
+- You can now buy up to 1m and 10m GQ/Oct upgrades at a time

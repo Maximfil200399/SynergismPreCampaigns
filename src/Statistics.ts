@@ -727,39 +727,39 @@ export const loadStatisticsCubeMultipliers = () => {
     1: { acc: 2, desc: 'PseudoCoin Upgrade:', color: 'gold' },
     2: { acc: 2, desc: 'Ascension Time Multiplier:' },
     3: { acc: 2, desc: 'Sun and Moon Achievements:' },
-    4: { acc: 2, desc: 'Speed Achievement:' },
-    5: { acc: 2, desc: 'Challenge 15 All Cube Bonus:' },
-    6: { acc: 2, desc: 'Rune 6 - Infinite Ascent:' },
-    7: { acc: 2, desc: 'Platonic Beta:' },
-    8: { acc: 2, desc: 'Platonic Omega:' },
+    4: { acc: 2, desc: 'Achievement 240 Bonus:' },
+    5: { acc: 2, desc: 'Challenge 15 Rewards:' },
+    6: { acc: 2, desc: 'Infinite Ascent:' },
+    7: { acc: 2, desc: 'Platonic BETA:' },
+    8: { acc: 2, desc: 'Platonic OMEGA:' },
     9: { acc: 2, desc: 'Overflux Powder:' },
     10: { acc: 2, desc: 'Event:' },
     11: { acc: 2, desc: 'Singularity Factor:' },
     12: { acc: 2, desc: 'Wow Pass Y' },
     13: { acc: 2, desc: 'Starter Pack:' },
-    14: { acc: 2, desc: 'Cube Flame [GQ]:' },
-    15: { acc: 2, desc: 'Cube Blaze [GQ]:' },
-    16: { acc: 2, desc: 'Cube Inferno [GQ]:' },
+    14: { acc: 2, desc: 'Cube Flame:' },
+    15: { acc: 2, desc: 'Cube Blaze:' },
+    16: { acc: 2, desc: 'Cube Inferno:' },
     17: { acc: 2, desc: 'Wow Pass Z:' },
     18: { acc: 2, desc: 'Cookie Upgrade 16:' },
     19: { acc: 2, desc: 'Cookie Upgrade 8:' },
-    20: { acc: 2, desc: 'Total Octeract Bonus:' },
-    21: { acc: 2, desc: 'No Singularity Upgrades Challenge:' },
-    22: { acc: 2, desc: 'Citadel [GQ]' },
-    23: { acc: 2, desc: 'Citadel 2 [GQ]' },
-    24: { acc: 4, desc: 'Platonic DELTA' },
-    25: { acc: 2, desc: 'Wow Pass ∞' },
-    26: { acc: 2, desc: 'Unspent Ambrosia Bonus' },
-    27: { acc: 2, desc: 'Module- Tutorial' },
-    28: { acc: 2, desc: 'Module- Cubes 1' },
-    29: { acc: 2, desc: 'Module- Luck-Cube 1' },
-    30: { acc: 2, desc: 'Module- Quark-Cube 1' },
-    31: { acc: 2, desc: 'Module- Cubes 2' },
-    32: { acc: 2, desc: 'Module- Hyperflux' },
-    33: { acc: 2, desc: '20 Ascensions X20 Bonus [EXALT ONLY]' },
-    34: { acc: 2, desc: 'Cash Grab ULTIMATE' },
-    35: { acc: 2, desc: 'Shop EX ULTIMATE' },
-    36: { acc: 2, desc: 'Exalt 6 Penalty (for being too slow!)' }
+    20: { acc: 2, desc: 'Lifetime Octeract Bonus:' },
+    21: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
+    22: { acc: 2, desc: 'The Fake Citadel:' },
+    23: { acc: 2, desc: 'The Real Citadel:' },
+    24: { acc: 4, desc: 'Platonic DELTA:' },
+    25: { acc: 2, desc: 'Wow Pass ∞:' },
+    26: { acc: 2, desc: 'Lifetime Ambrosia Bonus:' },
+    27: { acc: 2, desc: 'Ambrosia - Tutorial Module:' },
+    28: { acc: 2, desc: 'Ambrosia - Cube Module 1:' },
+    29: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module 1:' },
+    30: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module 1:' },
+    31: { acc: 2, desc: 'Ambrosia - Cube Module 2:' },
+    32: { acc: 2, desc: 'Ambrosia - Hyperflux Module:' },
+    33: { acc: 2, desc: 'EXALT 3x20 Reward:' },
+    34: { acc: 2, desc: 'The ULTIMATE Cash Grab:' },
+    35: { acc: 2, desc: 'The ULTIMATE EX:' },
+    36: { acc: 2, desc: 'EXALT 6 - Penalty for being too slow:', color: 'red' }
   }
   for (let i = 0; i < arr0.length; i++) {
     const statGCMi = DOMCacheGetOrSet(`statGCM${i + 1}`)
@@ -787,7 +787,7 @@ export const loadStatisticsCubeMultipliers = () => {
   const map: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
-    3: { acc: 2, desc: 'Season Pass 1:' },
+    3: { acc: 2, desc: 'Wow Pass 1:' },
     4: { acc: 2, desc: 'Researches (Except 8x25):' },
     5: { acc: 2, desc: 'Research 8x25:' },
     6: { acc: 2, desc: 'Cube Upgrades:' },
@@ -798,8 +798,8 @@ export const loadStatisticsCubeMultipliers = () => {
     11: { acc: 2, desc: 'Achievement 198-201 Bonus:' },
     12: { acc: 2, desc: 'Achievement 254 Bonus:' },
     13: { acc: 2, desc: 'Spirit Power:' },
-    14: { acc: 2, desc: 'Platonic Cubes:' },
-    15: { acc: 2, desc: 'Platonic 1x1:' },
+    14: { acc: 2, desc: 'Cube Shards:' },
+    15: { acc: 2, desc: 'Platonic Upgrade 1x1:' },
     16: { acc: 2, desc: 'Cookie Upgrade 13:' }
   }
   for (let i = 0; i < arr.length; i++) {
@@ -825,7 +825,7 @@ export const loadStatisticsCubeMultipliers = () => {
   const map2: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
-    3: { acc: 2, desc: 'Season Pass 1:' },
+    3: { acc: 2, desc: 'Wow Pass 1:' },
     4: { acc: 2, desc: 'Constant Upgrade 10:' },
     5: { acc: 2, desc: 'Cube Upgrade 3x10:' },
     6: { acc: 2, desc: 'Cube Upgrade 4x8:' },
@@ -833,8 +833,8 @@ export const loadStatisticsCubeMultipliers = () => {
     8: { acc: 2, desc: 'Achievement 202 Bonus:' },
     9: { acc: 2, desc: 'Achievement 205-208 Bonus:' },
     10: { acc: 2, desc: 'Achievement 255 Bonus:' },
-    11: { acc: 2, desc: 'Platonic Cubes:' },
-    12: { acc: 2, desc: 'Platonic 1x2:' }
+    11: { acc: 2, desc: 'Tesseract Shards:' },
+    12: { acc: 2, desc: 'Platonic Upgrade 1x2:' }
   }
   for (let i = 0; i < arr2.length; i++) {
     const statTeMi = DOMCacheGetOrSet(`statTeM${i + 1}`)
@@ -859,15 +859,15 @@ export const loadStatisticsCubeMultipliers = () => {
   const map3: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
-    3: { acc: 2, desc: 'Season Pass 2:' },
+    3: { acc: 2, desc: 'Wow Pass 2:' },
     4: { acc: 2, desc: 'Achievement 212-215 Bonus:' },
     5: { acc: 2, desc: 'Achievement 216 Bonus:' },
     6: { acc: 2, desc: 'Achievement 253 Bonus:' },
     7: { acc: 2, desc: 'Achievement 256 Bonus:' },
     8: { acc: 2, desc: 'Achievement 265 Bonus:' },
-    9: { acc: 2, desc: 'Platonic Cubes:' },
-    10: { acc: 2, desc: 'Platonic 1x3:' },
-    11: { acc: 2, desc: 'Hyperreal Hepteract Bonus:' }
+    9: { acc: 2, desc: 'Hypercube Shards:' },
+    10: { acc: 2, desc: 'Platonic Upgrade 1x3:' },
+    11: { acc: 2, desc: 'Hyperreal Hepteract:' }
   }
   for (let i = 0; i < arr3.length; i++) {
     const statHyMi = DOMCacheGetOrSet(`statHyM${i + 1}`)
@@ -892,13 +892,13 @@ export const loadStatisticsCubeMultipliers = () => {
   const map4: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
-    3: { acc: 2, desc: 'Season Pass 2:' },
+    3: { acc: 2, desc: 'Wow Pass 2:' },
     4: { acc: 2, desc: 'Achievement 196 Bonus:' },
     5: { acc: 2, desc: 'Achievement 219-222 Bonus:' },
     6: { acc: 2, desc: 'Achievement 223 Bonus:' },
     7: { acc: 2, desc: 'Achievement 257 Bonus:' },
-    8: { acc: 2, desc: 'Platonic Cubes:' },
-    9: { acc: 2, desc: 'Platonic 1x4:' }
+    8: { acc: 2, desc: 'Platonic Remnants:' },
+    9: { acc: 2, desc: 'Platonic Upgrade 1x4:' }
   }
   for (let i = 0; i < arr4.length; i++) {
     const statPlMi = DOMCacheGetOrSet(`statPlM${i + 1}`)
@@ -923,7 +923,7 @@ export const loadStatisticsCubeMultipliers = () => {
   const map5: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
-    3: { acc: 2, desc: 'Season Pass 3:' },
+    3: { acc: 2, desc: 'Wow Pass 3:' },
     4: { acc: 2, desc: 'Achievement 258 Bonus:' },
     5: { acc: 2, desc: 'Achievement 264 Bonus:' },
     6: { acc: 2, desc: 'Achievement 265 Bonus:' },
@@ -956,38 +956,38 @@ export const loadStatisticsCubeMultipliers = () => {
   const map6: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'PseudoCoin Upgrade:', color: 'gold' },
-    3: { acc: 2, desc: 'Season Pass 3:' },
-    4: { acc: 2, desc: 'Season Pass Y:' },
-    5: { acc: 2, desc: 'Season Pass Z:' },
-    6: { acc: 2, desc: 'Season Pass Lost:' },
+    3: { acc: 2, desc: 'Wow Pass 3:' },
+    4: { acc: 2, desc: 'Wow Pass Y:' },
+    5: { acc: 2, desc: 'Wow Pass Z:' },
+    6: { acc: 2, desc: 'Wow Pass LOST:' },
     7: { acc: 2, desc: 'Cookie Upgrade 20:' },
     8: { acc: 2, desc: 'Divine Pack:' },
     9: { acc: 2, desc: 'Cube Flame:' },
     10: { acc: 2, desc: 'Cube Blaze:' },
     11: { acc: 2, desc: 'Cube Inferno:' },
-    12: { acc: 2, desc: 'Octeract Absinthe' },
-    13: { acc: 2, desc: 'Pieces of Eight' },
-    14: { acc: 2, desc: 'Obelisk Shaped Like an Octagon' },
-    15: { acc: 2, desc: 'Octahedral Synthesis' },
-    16: { acc: 2, desc: 'Eighth Wonder of the World' },
-    17: { acc: 2, desc: 'Platonic is a fat sellout' },
-    18: { acc: 2, desc: 'Octeracts for Dummies' },
-    19: { acc: 2, desc: 'Octeract Cogenesis' },
-    20: { acc: 2, desc: 'Octeract Trigenesis' },
-    21: { acc: 2, desc: 'Singularity Factor' },
-    22: { acc: 2, desc: 'Digital Octeract Accumulator' },
-    23: { acc: 2, desc: 'Event Buff' },
-    24: { acc: 2, desc: 'Platonic DELTA' },
-    25: { acc: 2, desc: 'No Singularity Upgrades Challenge' },
+    12: { acc: 2, desc: 'Octeract Absinthe:' },
+    13: { acc: 2, desc: 'Pieces of Eight:' },
+    14: { acc: 2, desc: 'Obelisk Shaped Like an Octagon:' },
+    15: { acc: 2, desc: 'Octahedral Synthesis:' },
+    16: { acc: 2, desc: 'The Eighth Wonder of the World:' },
+    17: { acc: 2, desc: 'Platonic is a fat sellout!' },
+    18: { acc: 2, desc: 'Octeracts for Dummies:' },
+    19: { acc: 2, desc: 'Octeract Cogenesis:' },
+    20: { acc: 2, desc: 'Octeract Trigenesis:' },
+    21: { acc: 2, desc: '\'Derpsmith\'s Cornucopia\' Singularity Perk:' },
+    22: { acc: 2, desc: 'Digital Octeract Accumulator:' },
+    23: { acc: 2, desc: 'Event Buff:', color: 'lime' },
+    24: { acc: 2, desc: 'Platonic DELTA:' },
+    25: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
     26: { acc: 2, desc: 'Wow Pass ∞' },
-    27: { acc: 2, desc: 'Unspent Ambrosia Bonus' },
-    28: { acc: 2, desc: 'Module- Tutorial' },
-    29: { acc: 2, desc: 'Module- Cubes 1' },
-    30: { acc: 2, desc: 'Module- Luck-Cube 1' },
-    31: { acc: 2, desc: 'Module- Quark-Cube 1' },
-    32: { acc: 2, desc: 'Module- Cubes 2' },
-    33: { acc: 2, desc: 'Cash Grab ULTIMATE' },
-    34: { acc: 2, desc: 'Shop EX ULTIMATE' },
+    27: { acc: 2, desc: 'Lifetime Ambrosia Bonus:' },
+    28: { acc: 2, desc: 'Ambrosia - Tutorial Module:' },
+    29: { acc: 2, desc: 'Ambrosia - Cube Module 1:' },
+    30: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module 1:' },
+    31: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module 1:' },
+    32: { acc: 2, desc: 'Ambrosia - Cube Module 2:' },
+    33: { acc: 2, desc: 'The ULTIMATE Cash Grab:' },
+    34: { acc: 2, desc: 'The ULTIMATE EX:' },
     35: { acc: 2, desc: ascensionSpeedDesc }
   }
   for (let i = 0; i < octMults.list.length; i++) {
@@ -1010,43 +1010,43 @@ export const loadStatisticsCubeMultipliers = () => {
 
 export const loadStatisticsOfferingMultipliers = () => {
   const arr = calculateOfferings('prestige', false)
-  const map: Record<number, { acc: number; desc: string }> = {
-    1: { acc: 3, desc: 'Alchemy Achievement 5:' },
-    2: { acc: 3, desc: 'Alchemy Achievement 6:' },
-    3: { acc: 3, desc: 'Alchemy Achievement 7:' },
+  const map: Record<number, { acc: number; desc: string, color?: string }> = {
+    1: { acc: 3, desc: 'Achievement 33 Bonus:' },
+    2: { acc: 3, desc: 'Achievement 34 Bonus:' },
+    3: { acc: 3, desc: 'Achievement 35 Bonus:' },
     4: { acc: 3, desc: 'Diamond Upgrade 4x3:' },
     5: { acc: 3, desc: 'Particle Upgrade 3x5:' },
-    6: { acc: 3, desc: 'Auto Offering Shop Upgrade:' },
-    7: { acc: 3, desc: 'Offering EX Shop Upgrade:' },
-    8: { acc: 3, desc: 'Cash Grab Shop Upgrade:' },
+    6: { acc: 3, desc: 'Auto Offering:' },
+    7: { acc: 3, desc: 'Offering EX 1:' },
+    8: { acc: 3, desc: 'Cash Grab 1:' },
     9: { acc: 3, desc: 'Research 4x10:' },
     10: { acc: 3, desc: 'Sacrificium Formicidae:' },
-    11: { acc: 3, desc: 'Plutus Cube Tribute:' },
+    11: { acc: 3, desc: 'Plutus Tributes:' },
     12: { acc: 3, desc: 'Constant Upgrade 3:' },
-    13: { acc: 3, desc: 'Research 6x24,8x4:' },
-    14: { acc: 3, desc: 'Challenge 12:' },
+    13: { acc: 3, desc: 'Research 6x24 and 8x4:' },
+    14: { acc: 3, desc: 'Challenge 12 Reward:' },
     15: { acc: 3, desc: 'Research 8x25:' },
-    16: { acc: 3, desc: 'Ascension Count Achievement:' },
+    16: { acc: 3, desc: 'Achievement 187 Bonus:' },
     17: { acc: 3, desc: 'Sun and Moon Achievements:' },
     18: { acc: 3, desc: 'Cube Upgrade 5x6:' },
     19: { acc: 3, desc: 'Cube Upgrade 5x10:' },
     20: { acc: 3, desc: 'Platonic ALPHA:' },
     21: { acc: 3, desc: 'Platonic BETA:' },
     22: { acc: 3, desc: 'Platonic OMEGA:' },
-    23: { acc: 3, desc: 'Challenge 15:' },
+    23: { acc: 3, desc: 'Challenge 15 Reward:' },
     24: { acc: 3, desc: 'Starter Pack:' },
-    25: { acc: 3, desc: 'Offering Charge [GQ]:' },
-    26: { acc: 3, desc: 'Offering Storm [GQ]:' },
-    27: { acc: 3, desc: 'Offering Tempest [GQ]:' },
-    28: { acc: 3, desc: 'Citadel [GQ]' },
-    29: { acc: 3, desc: 'Citadel 2 [GQ]' },
-    30: { acc: 3, desc: 'Cube Upgrade Cx4:' },
-    31: { acc: 3, desc: 'Offering Electrolosis [OC]:' },
-    32: { acc: 3, desc: 'RNG-based Offering Booster:' },
-    33: { acc: 3, desc: 'Cube Upgrade Cx21:' },
-    34: { acc: 3, desc: '20 Ascensions X20 [EXALT ONLY]' },
-    35: { acc: 3, desc: 'Shop EX ULTIMATE' },
-    36: { acc: 3, desc: 'Event:' }
+    25: { acc: 3, desc: 'Offering Charge:' },
+    26: { acc: 3, desc: 'Offering Storm:' },
+    27: { acc: 3, desc: 'Offering Tempest:' },
+    28: { acc: 3, desc: 'The Fake Citadel:' },
+    29: { acc: 3, desc: 'The Real Citadel:' },
+    30: { acc: 3, desc: 'Cookie Upgrade 4:' },
+    31: { acc: 3, desc: 'Offering Electrolosis:' },
+    32: { acc: 3, desc: 'Ambrosia - RNG-based Offering Booster:' },
+    33: { acc: 3, desc: 'Cookie Upgrade 21:' },
+    34: { acc: 3, desc: 'EXALT 3x20 Reward:' },
+    35: { acc: 3, desc: 'The ULTIMATE EX:' },
+    36: { acc: 3, desc: 'Event:', color: 'lime' }
   }
   for (let i = 0; i < arr.length; i++) {
     const statOffi = DOMCacheGetOrSet(`statOff${i + 1}`)
@@ -1481,12 +1481,12 @@ export const loadPowderMultiplier = () => {
   const arr0 = calculatePowderConversion().list
   const map0: Record<number, { acc: number; desc: string }> = {
     1: { acc: 2, desc: 'Base:' },
-    2: { acc: 2, desc: 'Challenge 15 Bonus:' },
+    2: { acc: 2, desc: 'Challenge 15 Reward:' },
     3: { acc: 2, desc: 'Powder EX:' },
-    4: { acc: 2, desc: 'Achievement 256:' },
-    5: { acc: 2, desc: 'Achievement 257:' },
-    6: { acc: 2, desc: 'Platonic Upgrade 16 [4x1]:' },
-    7: { acc: 2, desc: 'Event:' }
+    4: { acc: 2, desc: 'Achievement 256 Bonus:' },
+    5: { acc: 2, desc: 'Achievement 257 Bonus:' },
+    6: { acc: 2, desc: 'Platonic Upgrade 4x1:' },
+    7: { acc: 2, desc: 'Event Bonus:' }
   }
   for (let i = 0; i < arr0.length; i++) {
     const statGCMi = DOMCacheGetOrSet(`statPoM${i + 1}`)
@@ -1510,29 +1510,29 @@ export const loadPowderMultiplier = () => {
 
 export const loadStatisticsAscensionSpeedMultipliers = () => {
   const arr = calculateAscensionSpeedMultiplier()
-  const map7: Record<number, { acc: number; desc: string }> = {
+  const map7: Record<number, { acc: number; desc: string, color?: string }> = {
     1: { acc: 2, desc: 'Chronometer:' },
     2: { acc: 2, desc: 'Chronometer 2:' },
     3: { acc: 2, desc: 'Chronometer 3:' },
     4: { acc: 2, desc: 'Chronos Hepteract:' },
     5: { acc: 2, desc: 'Achievement 262 Bonus:' },
     6: { acc: 2, desc: 'Achievement 263 Bonus:' },
-    7: { acc: 2, desc: 'Platonic Omega:' },
+    7: { acc: 2, desc: 'Platonic OMEGA:' },
     8: { acc: 2, desc: 'Challenge 15 Reward:' },
     9: { acc: 2, desc: 'Cookie Upgrade 9:' },
     10: { acc: 2, desc: 'Intermediate Pack:' },
     11: { acc: 2, desc: 'Chronometer Z:' },
     12: { acc: 2, desc: 'Abstract Photokinetics:' },
     13: { acc: 2, desc: 'Abstract Exokinetics:' },
-    14: { acc: 2, desc: 'Event:' },
-    15: { acc: 2, desc: 'Ascension Speedup 2 [GQ]:' },
-    16: { acc: 2, desc: 'Chronometer INF:' },
-    17: { acc: 2, desc: 'Limited Ascensions Penalty:' },
-    18: { acc: 2, desc: 'Limited Ascensions Reward:' },
-    19: { acc: 2, desc: 'Ascension Speedup [GQ]:' },
+    14: { acc: 2, desc: 'Event Bonus:', color: 'green' },
+    15: { acc: 2, desc: 'A mediocre Ascension speedup:' },
+    16: { acc: 2, desc: 'Chronometer ∞:' },
+    17: { acc: 2, desc: 'EXALT 3 Penalty:', color: 'red' },
+    18: { acc: 2, desc: 'EXALT 3 - Limited Ascensions:' },
+    19: { acc: 2, desc: 'A heckin\' good Ascension speedup:' },
     20: { acc: 2, desc: 'Singularity Penalty:' },
-    21: { acc: 2, desc: 'EXALT 6: The Great Singularity Speedrun:' },
-    22: { acc: 2, desc: 'Shop Chronometer S:' }
+    21: { acc: 2, desc: 'EXALT 6 - The Grand Singularity Speedrun:' },
+    22: { acc: 2, desc: 'Chronometer S:' }
   }
   for (let i = 0; i < arr.list.length; i++) {
     const statASMi = DOMCacheGetOrSet(`statASM${i + 1}`)
@@ -1554,15 +1554,15 @@ export const loadStatisticsGoldenQuarkMultipliers = () => {
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 2, desc: 'PseudoCoin Bonus:', color: 'gold' },
     2: { acc: 2, desc: 'Challenge 15 Exponent:' },
-    3: { acc: 2, desc: 'Patreon Bonus:' },
+    3: { acc: 2, desc: 'Existence Bonus:' },
     4: { acc: 2, desc: 'Golden Quarks I:' },
     5: { acc: 2, desc: 'Cookie Upgrade 19:' },
-    6: { acc: 2, desc: 'No Singularity Upgrades:' },
+    6: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
     7: { acc: 2, desc: 'Event:' },
     8: { acc: 2, desc: 'Singularity Fast Forwards:' },
     9: { acc: 2, desc: 'Golden Revolution II:' },
     10: { acc: 2, desc: 'Immaculate Alchemy:' },
-    11: { acc: 2, desc: 'Total Quarks Coefficient:' }
+    11: { acc: 2, desc: 'Quarks this Singularity:' }
   }
   for (let i = 0; i < arr.list.length; i++) {
     const statGQMi = DOMCacheGetOrSet(`statGQMS${i + 1}`)
@@ -1591,10 +1591,10 @@ export const loadAddCodeModifiersAndEffects = () => {
   // Add interval stats
   const intervalMap: Record<number, { acc: number; desc: string }> = {
     1: { acc: 0, desc: 'Base:' },
-    2: { acc: 2, desc: 'PL-AT δ calculator:' },
-    3: { acc: 2, desc: 'PL-AT Σ sing perk:' },
-    4: { acc: 2, desc: 'Ascension of Ant God:' },
-    5: { acc: 2, desc: 'Singularity factor:' }
+    2: { acc: 2, desc: 'PL-AT δ Calculator:' },
+    3: { acc: 2, desc: '\'PL-AT Σ\' Singularity Perk:' },
+    4: { acc: 2, desc: 'Antiquities of Ant God:' },
+    5: { acc: 2, desc: '\'It all adds up\' Singularity Perk:' }
   }
   intervalStats.list[0] /= 1000 // is originally in milliseconds, but players will expect it in seconds.
 
@@ -1645,7 +1645,7 @@ export const loadAddCodeModifiersAndEffects = () => {
     4: { acc: 0, desc: 'PL-AT Γ:' },
     5: { acc: 0, desc: 'PL-AT _:' },
     6: { acc: 0, desc: 'PL-AT ΩΩ' },
-    7: { acc: 3, desc: 'Singularity factor:' },
+    7: { acc: 3, desc: '\'It all adds up\' Singularity Perk:' },
     8: { acc: 0, desc: 'Plat-P:', color: 'gold' }
   }
 
@@ -1696,7 +1696,7 @@ export const loadAddCodeModifiersAndEffects = () => {
     }`
   }
 
-  DOMCacheGetOrSet('stat+eff2').childNodes[0].textContent = 'PL-AT X - bonus ascension time: '
+  DOMCacheGetOrSet('stat+eff2').childNodes[0].textContent = 'PL-AT Ω - Bonus Ascension time: '
   DOMCacheGetOrSet('s+eff2').textContent = `+${
     format(
       addEffectStats.ascensionTimer,
@@ -1704,7 +1704,7 @@ export const loadAddCodeModifiersAndEffects = () => {
     )
   } sec`
 
-  DOMCacheGetOrSet('stat+eff3').childNodes[0].textContent = 'PL-AT Γ - bonus GQ export time: '
+  DOMCacheGetOrSet('stat+eff3').childNodes[0].textContent = 'PL-AT Γ - Bonus GQ export time: '
   DOMCacheGetOrSet('s+eff3').textContent = `+${
     format(
       addEffectStats.gqTimer,
@@ -1712,7 +1712,7 @@ export const loadAddCodeModifiersAndEffects = () => {
     )
   } sec` // does it need a / 1000?
 
-  DOMCacheGetOrSet('stat+eff4').childNodes[0].textContent = 'PL-AT _ - bonus octeract time: '
+  DOMCacheGetOrSet('stat+eff4').childNodes[0].textContent = 'PL-AT _ - Bonus Octeract time: '
   DOMCacheGetOrSet('s+eff4').textContent = `+${
     format(
       addEffectStats.octeractTime,
@@ -1728,21 +1728,21 @@ export const loadStatisticsAmbrosiaLuck = () => {
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 0, desc: 'Base Value' },
     2: { acc: 0, desc: 'PseudoCoin Upgrade', color: 'gold' },
-    3: { acc: 0, desc: 'Irish Ants Singularity Perk' },
+    3: { acc: 0, desc: '\'Irish Ants\' Singularity Perk:' },
     4: { acc: 1, desc: 'Shop Upgrade Bonus' },
     5: { acc: 0, desc: 'Singularity Ambrosia Luck Upgrades' },
     6: { acc: 0, desc: 'Octeract Ambrosia Luck Upgrades' },
-    7: { acc: 0, desc: 'Ambrosia Luck Module I' },
-    8: { acc: 1, desc: 'Ambrosia Luck Module II' },
-    9: { acc: 2, desc: 'Ambrosia Cube-Luck Hybrid Module I' },
-    10: { acc: 2, desc: 'Ambrosia Quark-Luck Hybrid Module I' },
-    11: { acc: 0, desc: 'Primal Power: One Hundred Thirty One!' },
-    12: { acc: 0, desc: 'Primal Power: Two Hundred Sixty Nine!' },
-    13: { acc: 0, desc: 'Shop: Octeract-Based Ambrosia Luck' },
-    14: { acc: 0, desc: 'No Ambrosia Upgrades EXALT' },
-    15: { acc: 0, desc: 'Cube Upgrade Cx27' },
-    16: { acc: 0, desc: 'Red Bar Fills with Cx29' },
-    17: { acc: 0, desc: 'ULTRA Upgrade: Ambrosia Exalter' }
+    7: { acc: 0, desc: 'Ambrosia - Luck Module 1:' },
+    8: { acc: 1, desc: 'Ambrosia - Luck Module 2:' },
+    9: { acc: 2, desc: 'Ambrosia - Cube-Luck Hybrid Module 1' },
+    10: { acc: 2, desc: 'Ambrosia - Quark-Luck Hybrid Module 1:' },
+    11: { acc: 0, desc: '\'Primal Power\' Singularity 131 Bonus:' },
+    12: { acc: 0, desc: '\'Primal Power\' Singularity 269 Bonus:' },
+    13: { acc: 0, desc: 'Octeract-based Ambrosia Luck:' },
+    14: { acc: 0, desc: 'EXALT 5 - No Ambrosia Upgrades:' },
+    15: { acc: 0, desc: 'Cookie Upgrade 27:' },
+    16: { acc: 0, desc: 'Red Bar Fills with Cx29:' },
+    17: { acc: 0, desc: 'The EXALTED Ambrosia Luck Increaser:' }
   }
   for (let i = 0; i < arr.length - 1; i++) {
     const statALuckMi = DOMCacheGetOrSet(`statALuckM${i + 1}`)
@@ -1772,15 +1772,15 @@ export const loadStatisticsAmbrosiaGeneration = () => {
     1: { acc: 4, desc: 'Visited Ambrosia Subtab' },
     2: { acc: 4, desc: 'PseudoCoin Upgrade', color: 'gold' },
     3: { acc: 4, desc: 'Number of Blueberries' },
-    4: { acc: 4, desc: 'Shop Upgrade Bonus' },
-    5: { acc: 4, desc: 'Singularity Ambrosia Generation Upgrades' },
-    6: { acc: 4, desc: 'Octeract Ambrosia Generation Upgrades' },
-    7: { acc: 4, desc: 'Patreon Bonus' },
-    8: { acc: 4, desc: 'One Ascension Challenge EXALT' },
-    9: { acc: 4, desc: 'No Ambrosia Upgrades EXALT' },
-    10: { acc: 4, desc: 'Cube Upgrade Cx26' },
-    11: { acc: 4, desc: 'Cash-Grab ULTIMATE' },
-    12: { acc: 4, desc: 'Event Bonus' }
+    4: { acc: 4, desc: 'Quark Shop Upgrades:' },
+    5: { acc: 4, desc: 'Singularity Upgrades:' },
+    6: { acc: 4, desc: 'Octeract Upgrades:' },
+    7: { acc: 4, desc: 'Ambrosia - Ambrosia Made Twice as Nice:' },
+    8: { acc: 4, desc: 'EXALT 3 - Limited Ascensions:' },
+    9: { acc: 4, desc: 'EXALT 5 - No Ambrosia Upgrades:' },
+    10: { acc: 4, desc: 'Cookie Upgrade 26:' },
+    11: { acc: 4, desc: 'The ULTIMATE Cash Grab:' },
+    12: { acc: 4, desc: 'Event Bonus:', color: 'lime' }
   }
   for (let i = 0; i < arr.length; i++) {
     const statAGenMi = DOMCacheGetOrSet(`statAGenM${i + 1}`)

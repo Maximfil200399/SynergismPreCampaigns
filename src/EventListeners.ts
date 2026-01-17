@@ -109,7 +109,7 @@ import {
   toggleHideShop,
   toggleMaxBuyCube,
   toggleResearchBuy,
-  toggleSaveOff,
+  maxPlatToggle,
   toggleSettings,
   toggleShopConfirmation,
   toggleShops,
@@ -700,7 +700,7 @@ export const generateEventHandlers = () => {
   DOMCacheGetOrSet('openCustomPlatonicCube').addEventListener('click', () => player.wowPlatonicCubes.openCustom())
   DOMCacheGetOrSet('openMostPlatonicCube').addEventListener('click', () => player.wowPlatonicCubes.open(1, true))
 
-  DOMCacheGetOrSet('saveOffToggle').addEventListener('click', () => toggleSaveOff())
+  DOMCacheGetOrSet('maxPlatToggle').addEventListener('click', () => maxPlatToggle())
   // Part 3: Platonic Upgrade Section
   const platonicUpgrades = document.getElementsByClassName(
     'platonicUpgradeImage'

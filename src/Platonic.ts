@@ -456,7 +456,7 @@ export const buyPlatonicUpgrades = (index: number, auto = false) => {
       break
     }
 
-    if (player.platonicUpgrades[index] === platUpgradeBaseCosts[index].maxLevel || player.singularityCount === 0) {
+    if (player.platonicUpgrades[index] === platUpgradeBaseCosts[index].maxLevel || !player.maxPlatToggle) {
       break
     }
   }

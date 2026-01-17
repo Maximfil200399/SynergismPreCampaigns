@@ -151,7 +151,7 @@ export const generateExportSummary = async (): Promise<void> => {
     singularity = `${singularity}Effective Singularity [for penalties]: ${
       format(calculateEffectiveSingularities(), 2, true)
     }\n`
-    singularity = `${singularity}Antiquity of Ant God Upgraded: ${(player.runelevels[6] > 0) ? '✔' : '✖'}\n`
+    singularity = `${singularity}Antiquities of Ant God: ${(player.runelevels[6] > 0) ? '✔' : '✖'}\n`
   }
 
   // Ascension Subportion!
@@ -160,8 +160,8 @@ export const generateExportSummary = async (): Promise<void> => {
     ascension = '===== ASCENSION ===== \n'
     ascension = `${ascension}Ascension Count: ${format(player.ascensionCount, 0, true)}\n`
     ascension = `${ascension}Ascension Timer: ${formatS(player.ascensionCounter)}\n`
-    ascension = `${ascension}Real Life Ascension Timer: ${formatS(player.ascensionCounterReal)}\n`
-    ascension = `${ascension}Truly Real Life Ascension Timer: ${formatS(player.ascensionCounterRealReal)}\n`
+    ascension = `${ascension}"Real" Ascension Timer: ${formatS(player.ascensionCounterReal)}\n`
+    ascension = `${ascension}Truly Real Ascension Timer: ${formatS(player.ascensionCounterRealReal)}\n`
     ascension = `${ascension}Ascension Speed Multiplier: ${format(calculateAscensionAcceleration(), 2, true)}\n`
     ascension = `${ascension}Challenge 11 Completions: ${player.challengecompletions[11]}/${getMaxChallenges(11)}\n`
     ascension = `${ascension}Challenge 12 Completions: ${player.challengecompletions[12]}/${getMaxChallenges(12)}\n`
@@ -373,7 +373,7 @@ export const generateExportSummary = async (): Promise<void> => {
       if (singUpg.maxLevel === -1) {
         totalSingInfiniteLevel += 1
       }
-      if (singUpg.level === singUpg.maxLevel) {
+      if (singUpg.level >= singUpg.maxLevel) {
         totalSingUpgradeMax += 1
       }
       if (player.singularityCount >= singUpg.minimumSingularity) {
@@ -386,7 +386,7 @@ export const generateExportSummary = async (): Promise<void> => {
       if (player.singularityCount >= singUpg.minimumSingularity) {
         if (singUpg.maxLevel === -1) {
           unicodeSymbol = '[∞]'
-        } else if (singUpg.level === singUpg.maxLevel) {
+        } else if (singUpg.level >= singUpg.maxLevel) {
           unicodeSymbol = '[★]'
         } else {
           unicodeSymbol = '[✔]'

@@ -50,7 +50,7 @@ export class OcteractUpgrade extends DynamicUpgrade {
     let OCTBudget = player.wowOcteracts
 
     if (event.shiftKey) {
-      maxPurchasable = 1000000
+      maxPurchasable = 10000000
       const buy = Number(
         await Prompt(`${i18next.t('octeract.buyLevel.buyPrompt', { n: format(player.wowOcteracts, 0, true) })}`)
       )

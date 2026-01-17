@@ -2095,7 +2095,7 @@ export const getOcteractValueMultipliers = () => {
     1 + (0.75 * player.shopUpgrades.seasonPassY) / 100,
     1 + (player.shopUpgrades.seasonPassZ * player.singularityCount) / 100,
     1 + player.shopUpgrades.seasonPassLost / 1000,
-    // cube upgrade 70, ie Cx20
+    // cube upgrade 70, ie Cx20 (14*8 is 112, which is why)
     1 + (+(corruptionLevelSum >= 14 * 8) * player.cubeUpgrades[70]) / 10000,
     1
     + +(corruptionLevelSum >= 14 * 8)
