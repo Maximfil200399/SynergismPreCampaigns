@@ -754,8 +754,8 @@ export const loadStatisticsCubeMultipliers = () => {
     26: { acc: 2, desc: 'Lifetime Ambrosia Bonus:' },
     27: { acc: 2, desc: 'Ambrosia - Tutorial Module:' },
     28: { acc: 2, desc: 'Ambrosia - Cube Module 1:' },
-    29: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module 1:' },
-    30: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module 1:' },
+    29: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module:' },
+    30: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module:' },
     31: { acc: 2, desc: 'Ambrosia - Cube Module 2:' },
     32: { acc: 2, desc: 'Ambrosia - Hyperflux Module:' },
     33: { acc: 2, desc: 'EXALT 3x20 Reward:' },
@@ -982,12 +982,12 @@ export const loadStatisticsCubeMultipliers = () => {
     23: { acc: 2, desc: 'Other funny stat that just says x1.00:', color: 'lime' },
     24: { acc: 2, desc: 'Platonic DELTA:' },
     25: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
-    26: { acc: 2, desc: 'Wow Pass ∞' },
+    26: { acc: 2, desc: 'Wow Pass ∞:' },
     27: { acc: 2, desc: 'Lifetime Ambrosia Bonus:' },
     28: { acc: 2, desc: 'Ambrosia - Tutorial Module:' },
     29: { acc: 2, desc: 'Ambrosia - Cube Module 1:' },
-    30: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module 1:' },
-    31: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module 1:' },
+    30: { acc: 2, desc: 'Ambrosia - Luck-Cube Hybrid Module:' },
+    31: { acc: 2, desc: 'Ambrosia - Quark-Cube Hybrid Module:' },
     32: { acc: 2, desc: 'Ambrosia - Cube Module 2:' },
     33: { acc: 2, desc: 'The ULTIMATE Cash Grab:' },
     34: { acc: 2, desc: 'The ULTIMATE EX:' },
@@ -1562,6 +1562,9 @@ export const loadStatisticsAscensionSpeedMultipliers = () => {
 
 export const loadStatisticsGoldenQuarkMultipliers = () => {
   const arr = calculateGoldenQuarkMultiplier()
+  const unconvertedQuarks = player.highestSingularityCount >= 160
+  ? 'Unconverted Quarks this Singularity:'
+  : 'Quarks this Singularity:'
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 2, desc: 'Funny stat that just says x1.00:', color: 'gold' },
     2: { acc: 2, desc: 'Challenge 15 Exponent:' },
@@ -1573,9 +1576,9 @@ export const loadStatisticsGoldenQuarkMultipliers = () => {
     8: { acc: 2, desc: 'Singularity Fast Forwards:' },
     9: { acc: 2, desc: 'Golden Revolution II:' },
     10: { acc: 2, desc: 'Immaculate Alchemy:' },
-    11: { acc: 2, desc: 'Quarks this Singularity:' }
-  }
-  for (let i = 0; i < arr.list.length; i++) {
+    11: { acc: 2, desc: unconvertedQuarks } // Golden Revolution IV converts pending GQ to held GQ. Originally this was done by subtracting quarks this sing...
+  } // ...but that behavior was somewhat changed (I added an "unconverted quarks" property). The variable text *should* reduce confusion on quarks this sing...
+  for (let i = 0; i < arr.list.length; i++) { //...seemingly contributing less over time
     const statGQMi = DOMCacheGetOrSet(`statGQMS${i + 1}`)
     if (map[i + 1].color) {
       statGQMi.style.color = map[i + 1].color ?? 'white'
@@ -2265,7 +2268,7 @@ export const gameStages = (): Stage[] => {
       tier: 6,
       name: 'pen',
       unlocked: false,
-      reset: false
+      reset: false // If I did this right, this means that the stage will *never* change if you have The Ultimate Pen
     }
   ]
   return stages

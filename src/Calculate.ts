@@ -2498,7 +2498,7 @@ export const calculateGoldenQuarkMultiplier = (computeMultiplier = false) => {
   arr.push(
     computeMultiplier
       ? 1 / 1e5
-      : ((base + player.quarksThisSingularity / 1e5) * productContents(arr) + bonus) / productContents(arr)
+      : ((base + (player.quarksThisSingularity - player.quarksConverted) / 1e5) * productContents(arr) + bonus) / productContents(arr)
   )
 
   return {

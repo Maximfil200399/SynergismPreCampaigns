@@ -604,6 +604,7 @@ export const playerSchema = z.object({
   seenS150Message: z.boolean().default(() => blankSave.seenS150Message),
   singularityCounter: z.number().default(() => blankSave.singularityCount),
   goldenQuarks: z.number().default(() => blankSave.goldenQuarks),
+  quarksConverted: z.number().default(() => blankSave.quarksConverted),
   quarksThisSingularity: z.number().nullable().default(() => blankSave.quarksThisSingularity),
   totalQuarksEver: z.number().default(() => blankSave.totalQuarksEver),
   hotkeys: z.record(integerStringSchema, z.string().array()).default(() => blankSave.hotkeys),

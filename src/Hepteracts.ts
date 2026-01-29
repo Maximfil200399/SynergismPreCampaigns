@@ -541,7 +541,7 @@ export const hepteractDescriptions = (type: hepteractTypes) => {
       }
       break
     case 'abyss':
-      oneCost = format(69 * craftCostMulti)
+      oneCost = '69' // This cost is irrelevant anyway, and it's maintains the "haha the game said 69" joke
       break
     case 'accelerator':
       currentEffectRecord = {

@@ -1000,6 +1000,7 @@ export const player: Player = {
   seenS150Message: false,
   singularityCounter: 0,
   goldenQuarks: 0,
+  quarksConverted: 0,
   quarksThisSingularity: 0,
   totalQuarksEver: 0,
   hotkeys: {},

@@ -23,10 +23,8 @@ NodeJS - https://nodejs.org/en/ (some recent version)
 ---
 To get a list of available commands in the Makefile, run `make help` or just `make`
 
-## (most) Current changes:
-- (I should probably make a google doc for this tbh itll make things way easier)
-
-
+## Current changes:
+- For a more complete list, check the wiki.
 - Locked the Patreon bonus to 100% (now called an "existence" bonus) and disabled PseudoCoin upgrades (the event/pseudocoin tabs still exist because poor coding skills)
 - Rewrote many descriptions, often for fun. Also added i18n to Platonic Upgrades
 - Made an awful attempt at improving Stats for Nerds (it kinda worked???)

@@ -128,9 +128,9 @@ export const addTimers = (input: TimerInput, time = 0) => {
           }
 
           for (let i = 0; i < amountOfGiveaways; i++) {
-            const quarkFraction = player.quarksThisSingularity * frac * actualLevel
+            const quarkFraction = (player.quarksThisSingularity - player.quarksConverted) * frac * actualLevel
             player.goldenQuarks += quarkFraction * calculateGoldenQuarkGain(true)
-            player.quarksThisSingularity -= quarkFraction
+            player.quarksConverted += quarkFraction
           }
         }
         visualUpdateOcteracts()

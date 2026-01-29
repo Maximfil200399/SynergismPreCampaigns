@@ -614,6 +614,7 @@ export interface Player {
   seenS150Message: boolean
   singularityCounter: number
   goldenQuarks: number
+  quarksConverted: number
   quarksThisSingularity: number
   totalQuarksEver: number
   hotkeys: Record<number, string[]>

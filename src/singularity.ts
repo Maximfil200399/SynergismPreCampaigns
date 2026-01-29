@@ -2243,7 +2243,7 @@ export const singularityPerks: SingularityPerk[] = [
     },
     levels: [200],
     description: () => {
-      const amt = format(Math.pow((player.singularityCount - 179) / 20, 2), 4)
+      const amt = format(Math.pow((player.highestSingularityCount - 179) / 20, 2), 4)
       return i18next.t('singularity.perks.skrauQ.default', { amt })
     },
     ID: 'skrauQ'
