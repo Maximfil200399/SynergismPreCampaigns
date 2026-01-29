@@ -673,6 +673,8 @@ export const loadQuarkMultiplier = () => {
   }`
   DOMCacheGetOrSet('sGQM34').textContent = `x${format(player.highestSingularityCount === 0 ? 1.25 : 1, 2, true)}` // Buff in s0
 
+  DOMCacheGetOrSet('sGQM35').textContent = `x${format(player.singularityUpgrades.ultimatePen.level > 0 ? 2.77 : 1, 2, true)}` // The Ultimate Pen
+
   DOMCacheGetOrSet('sGQMT').textContent = `x${
     format(
       player.worlds.applyBonus(1),
@@ -724,7 +726,7 @@ export const loadGlobalSpeedMultiplier = () => {
 export const loadStatisticsCubeMultipliers = () => {
   const arr0 = calculateAllCubeMultiplier().list
   const map0: Record<number, { acc: number; desc: string; color?: string }> = {
-    1: { acc: 2, desc: 'PseudoCoin Upgrade:', color: 'gold' },
+    1: { acc: 2, desc: 'Funny stat that just says x1.00:', color: 'gold' },
     2: { acc: 2, desc: 'Ascension Time Multiplier:' },
     3: { acc: 2, desc: 'Sun and Moon Achievements:' },
     4: { acc: 2, desc: 'Achievement 240 Bonus:' },
@@ -733,9 +735,9 @@ export const loadStatisticsCubeMultipliers = () => {
     7: { acc: 2, desc: 'Platonic BETA:' },
     8: { acc: 2, desc: 'Platonic OMEGA:' },
     9: { acc: 2, desc: 'Overflux Powder:' },
-    10: { acc: 2, desc: 'Event:' },
-    11: { acc: 2, desc: 'Singularity Factor:' },
-    12: { acc: 2, desc: 'Wow Pass Y' },
+    10: { acc: 2, desc: 'Other funny stat that just says x1.00:' },
+    11: { acc: 2, desc: 'Singularity Penalties:' },
+    12: { acc: 2, desc: 'Wow Pass Y:' },
     13: { acc: 2, desc: 'Starter Pack:' },
     14: { acc: 2, desc: 'Cube Flame:' },
     15: { acc: 2, desc: 'Cube Blaze:' },
@@ -759,7 +761,8 @@ export const loadStatisticsCubeMultipliers = () => {
     33: { acc: 2, desc: 'EXALT 3x20 Reward:' },
     34: { acc: 2, desc: 'The ULTIMATE Cash Grab:' },
     35: { acc: 2, desc: 'The ULTIMATE EX:' },
-    36: { acc: 2, desc: 'EXALT 6 - Penalty for being too slow:', color: 'red' }
+    36: { acc: 2, desc: 'EXALT 6 - Penalty for being too slow:', color: 'red' },
+    37: { acc: 2, desc: 'The Ultimate Pen:' }
   }
   for (let i = 0; i < arr0.length; i++) {
     const statGCMi = DOMCacheGetOrSet(`statGCM${i + 1}`)
@@ -788,7 +791,7 @@ export const loadStatisticsCubeMultipliers = () => {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
     2: { acc: 2, desc: 'Global Cube Multiplier:' },
     3: { acc: 2, desc: 'Wow Pass 1:' },
-    4: { acc: 2, desc: 'Researches (Except 8x25):' },
+    4: { acc: 2, desc: 'Research (Except 8x25):' },
     5: { acc: 2, desc: 'Research 8x25:' },
     6: { acc: 2, desc: 'Cube Upgrades:' },
     7: { acc: 2, desc: 'Constant Upgrade 10:' },
@@ -955,7 +958,7 @@ export const loadStatisticsCubeMultipliers = () => {
     : 'Ascension Speed Multiplier'
   const map6: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 2, desc: 'Ascension Score Multiplier:' },
-    2: { acc: 2, desc: 'PseudoCoin Upgrade:', color: 'gold' },
+    2: { acc: 2, desc: 'Funny stat that just says x1.00:', color: 'gold' },
     3: { acc: 2, desc: 'Wow Pass 3:' },
     4: { acc: 2, desc: 'Wow Pass Y:' },
     5: { acc: 2, desc: 'Wow Pass Z:' },
@@ -976,7 +979,7 @@ export const loadStatisticsCubeMultipliers = () => {
     20: { acc: 2, desc: 'Octeract Trigenesis:' },
     21: { acc: 2, desc: '\'Derpsmith\'s Cornucopia\' Singularity Perk:' },
     22: { acc: 2, desc: 'Digital Octeract Accumulator:' },
-    23: { acc: 2, desc: 'Event Buff:', color: 'lime' },
+    23: { acc: 2, desc: 'Other funny stat that just says x1.00:', color: 'lime' },
     24: { acc: 2, desc: 'Platonic DELTA:' },
     25: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
     26: { acc: 2, desc: 'Wow Pass ∞' },
@@ -988,7 +991,8 @@ export const loadStatisticsCubeMultipliers = () => {
     32: { acc: 2, desc: 'Ambrosia - Cube Module 2:' },
     33: { acc: 2, desc: 'The ULTIMATE Cash Grab:' },
     34: { acc: 2, desc: 'The ULTIMATE EX:' },
-    35: { acc: 2, desc: ascensionSpeedDesc }
+    35: { acc: 2, desc: 'The Ultimate Pen:' },
+    36: { acc: 2, desc: ascensionSpeedDesc }
   }
   for (let i = 0; i < octMults.list.length; i++) {
     const statOcMi = DOMCacheGetOrSet(`statOcM${i + 1}`)
@@ -1046,7 +1050,12 @@ export const loadStatisticsOfferingMultipliers = () => {
     33: { acc: 3, desc: 'Cookie Upgrade 21:' },
     34: { acc: 3, desc: 'EXALT 3x20 Reward:' },
     35: { acc: 3, desc: 'The ULTIMATE EX:' },
-    36: { acc: 3, desc: 'Event:', color: 'lime' }
+    36: { acc: 3, desc: 'Funny stat that just says x1.000:', color: 'lime' },
+    37: { acc: 3, desc: 'Cash Grab 2:' },
+    38: { acc: 3, desc: 'Offering EX 2:' },
+    39: { acc: 3, desc: 'Offering EX 3:' },
+    40: { acc: 3, desc: 'Lifetime Octeracts:' },
+    41: { acc: 3, desc: 'The Ultimate Pen:' },
   }
   for (let i = 0; i < arr.length; i++) {
     const statOffi = DOMCacheGetOrSet(`statOff${i + 1}`)
@@ -1439,13 +1448,14 @@ export const loadObtainiumMultipliers = () => {
       2
     )
   }`
-  DOMCacheGetOrSet('sObt54').textContent = `/${
+  DOMCacheGetOrSet('sObt54').textContent = `x${format(player.singularityUpgrades.ultimatePen.getEffect().bonus ? 7.77 : 1, 2)}`
+  DOMCacheGetOrSet('sObt55').textContent = `/${
     format(
       calculateSingularityDebuff('Obtainium'),
       2
     )
   }`
-  DOMCacheGetOrSet('sObt55').textContent = `^${
+  DOMCacheGetOrSet('sObt56').textContent = `^${
     format(
       player.usedCorruptions[5] >= 15
         ? 1 / 4
@@ -1453,7 +1463,7 @@ export const loadObtainiumMultipliers = () => {
       2
     )
   }`
-  DOMCacheGetOrSet('sObt56').textContent = `^${
+  DOMCacheGetOrSet('sObt57').textContent = `^${
     format(
       player.usedCorruptions[5] >= 16
         ? 1 / 4
@@ -1461,7 +1471,7 @@ export const loadObtainiumMultipliers = () => {
       2
     )
   }`
-  DOMCacheGetOrSet('sObt57').textContent = `x${
+  DOMCacheGetOrSet('sObt58').textContent = `x${
     format(
       player.currentChallenge.ascension === 14
         ? 0
@@ -1486,7 +1496,7 @@ export const loadPowderMultiplier = () => {
     4: { acc: 2, desc: 'Achievement 256 Bonus:' },
     5: { acc: 2, desc: 'Achievement 257 Bonus:' },
     6: { acc: 2, desc: 'Platonic Upgrade 4x1:' },
-    7: { acc: 2, desc: 'Event Bonus:' }
+    7: { acc: 2, desc: 'Funny stat that just says x1.00:' }
   }
   for (let i = 0; i < arr0.length; i++) {
     const statGCMi = DOMCacheGetOrSet(`statPoM${i + 1}`)
@@ -1524,15 +1534,16 @@ export const loadStatisticsAscensionSpeedMultipliers = () => {
     11: { acc: 2, desc: 'Chronometer Z:' },
     12: { acc: 2, desc: 'Abstract Photokinetics:' },
     13: { acc: 2, desc: 'Abstract Exokinetics:' },
-    14: { acc: 2, desc: 'Event Bonus:', color: 'green' },
+    14: { acc: 2, desc: 'Funny stat that just says x1.00:', color: 'green' },
     15: { acc: 2, desc: 'A mediocre Ascension speedup:' },
     16: { acc: 2, desc: 'Chronometer ∞:' },
     17: { acc: 2, desc: 'EXALT 3 Penalty:', color: 'red' },
     18: { acc: 2, desc: 'EXALT 3 - Limited Ascensions:' },
-    19: { acc: 2, desc: 'A heckin\' good Ascension speedup:' },
-    20: { acc: 2, desc: 'Singularity Penalty:' },
-    21: { acc: 2, desc: 'EXALT 6 - The Grand Singularity Speedrun:' },
-    22: { acc: 2, desc: 'Chronometer S:' }
+    19: { acc: 2, desc: 'EXALT 6 - The Grand Singularity Speedrun:' },
+    20: { acc: 2, desc: 'Chronometer S:' },
+    21: { acc: 2, desc: 'The Ultimate Pen:' },
+    22: { acc: 2, desc: 'A heckin\' good Ascension speedup:' },
+    23: { acc: 2, desc: 'Singularity Penalty:' }
   }
   for (let i = 0; i < arr.list.length; i++) {
     const statASMi = DOMCacheGetOrSet(`statASM${i + 1}`)
@@ -1552,13 +1563,13 @@ export const loadStatisticsAscensionSpeedMultipliers = () => {
 export const loadStatisticsGoldenQuarkMultipliers = () => {
   const arr = calculateGoldenQuarkMultiplier()
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
-    1: { acc: 2, desc: 'PseudoCoin Bonus:', color: 'gold' },
+    1: { acc: 2, desc: 'Funny stat that just says x1.00:', color: 'gold' },
     2: { acc: 2, desc: 'Challenge 15 Exponent:' },
-    3: { acc: 2, desc: 'Existence Bonus:' },
+    3: { acc: 2, desc: 'Permanent x2 Bonus:' },
     4: { acc: 2, desc: 'Golden Quarks I:' },
     5: { acc: 2, desc: 'Cookie Upgrade 19:' },
     6: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
-    7: { acc: 2, desc: 'Event:' },
+    7: { acc: 2, desc: 'Other funny stat that just says x1.00:' },
     8: { acc: 2, desc: 'Singularity Fast Forwards:' },
     9: { acc: 2, desc: 'Golden Revolution II:' },
     10: { acc: 2, desc: 'Immaculate Alchemy:' },
@@ -1646,7 +1657,7 @@ export const loadAddCodeModifiersAndEffects = () => {
     5: { acc: 0, desc: 'PL-AT _:' },
     6: { acc: 0, desc: 'PL-AT ΩΩ' },
     7: { acc: 3, desc: '\'It all adds up\' Singularity Perk:' },
-    8: { acc: 0, desc: 'Plat-P:', color: 'gold' }
+    8: { acc: 0, desc: 'Funny stat that just says x1:', color: 'gold' }
   }
 
   for (let i = 0; i < capacityStats.list.length; i++) {
@@ -1727,9 +1738,9 @@ export const loadStatisticsAmbrosiaLuck = () => {
   const arr = stats.array
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
     1: { acc: 0, desc: 'Base Value' },
-    2: { acc: 0, desc: 'PseudoCoin Upgrade', color: 'gold' },
+    2: { acc: 0, desc: 'Funny stat that says +0:', color: 'gold' },
     3: { acc: 0, desc: '\'Irish Ants\' Singularity Perk:' },
-    4: { acc: 1, desc: 'Shop Upgrade Bonus' },
+    4: { acc: 1, desc: 'Quark Shop Upgrades' },
     5: { acc: 0, desc: 'Singularity Ambrosia Luck Upgrades' },
     6: { acc: 0, desc: 'Octeract Ambrosia Luck Upgrades' },
     7: { acc: 0, desc: 'Ambrosia - Luck Module 1:' },
@@ -1742,7 +1753,8 @@ export const loadStatisticsAmbrosiaLuck = () => {
     14: { acc: 0, desc: 'EXALT 5 - No Ambrosia Upgrades:' },
     15: { acc: 0, desc: 'Cookie Upgrade 27:' },
     16: { acc: 0, desc: 'Red Bar Fills with Cx29:' },
-    17: { acc: 0, desc: 'The EXALTED Ambrosia Luck Increaser:' }
+    17: { acc: 0, desc: 'The EXALTED Ambrosia Luck Increaser:' },
+    18: { acc: 0, desc: 'The Ultimate Pen:' }
   }
   for (let i = 0; i < arr.length - 1; i++) {
     const statALuckMi = DOMCacheGetOrSet(`statALuckM${i + 1}`)
@@ -1769,9 +1781,9 @@ export const loadStatisticsAmbrosiaGeneration = () => {
   const stats = calculateAmbrosiaGenerationSpeed()
   const arr = stats.array
   const map: Record<number, { acc: number; desc: string; color?: string }> = {
-    1: { acc: 4, desc: 'Visited Ambrosia Subtab' },
-    2: { acc: 4, desc: 'PseudoCoin Upgrade', color: 'gold' },
-    3: { acc: 4, desc: 'Number of Blueberries' },
+    1: { acc: 4, desc: 'Visited Ambrosia Subtab:' },
+    2: { acc: 4, desc: 'Funny stat that just says x1.0000:', color: 'gold' },
+    3: { acc: 4, desc: 'Number of Blueberries:' },
     4: { acc: 4, desc: 'Quark Shop Upgrades:' },
     5: { acc: 4, desc: 'Singularity Upgrades:' },
     6: { acc: 4, desc: 'Octeract Upgrades:' },
@@ -1780,7 +1792,8 @@ export const loadStatisticsAmbrosiaGeneration = () => {
     9: { acc: 4, desc: 'EXALT 5 - No Ambrosia Upgrades:' },
     10: { acc: 4, desc: 'Cookie Upgrade 26:' },
     11: { acc: 4, desc: 'The ULTIMATE Cash Grab:' },
-    12: { acc: 4, desc: 'Event Bonus:', color: 'lime' }
+    12: { acc: 4, desc: 'The Ultimate Pen:' },
+    13: { acc: 4, desc: 'Other funny stat that just says x1.0000:', color: 'lime' }
   }
   for (let i = 0; i < arr.length; i++) {
     const statAGenMi = DOMCacheGetOrSet(`statAGenM${i + 1}`)
@@ -2236,14 +2249,14 @@ export const gameStages = (): Stage[] => {
     {
       stage: 22,
       tier: 6,
-      name: 'onemind-exalt7x20',
-      unlocked: player.singularityChallenges.sadisticPrequel.completions > 19,
+      name: 'onemind-finale',
+      unlocked: player.highestSingularityCount > 272, // 273~277 are the "finale" Singularities
       reset: player.highestSingularityCount > 0
     },
     {
       stage: 23,
       tier: 6,
-      name: 'exalt7x20-pen',
+      name: 'finale-pen',
       unlocked: player.singularityUpgrades.ultimatePen.level > 0,
       reset: player.highestSingularityCount > 0
     },
@@ -2252,7 +2265,7 @@ export const gameStages = (): Stage[] => {
       tier: 6,
       name: 'pen',
       unlocked: false,
-      reset: player.highestSingularityCount > 0
+      reset: false
     }
   ]
   return stages

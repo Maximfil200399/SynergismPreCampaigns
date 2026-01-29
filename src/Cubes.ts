@@ -217,7 +217,7 @@ export const autoBuyCubeUpgrades = () => {
   if (
     player.autoCubeUpgradesToggle
     && ((player.highestSingularityCount >= 50 && player.insideSingularityChallenge)
-      || player.highestSingularityCount >= 150)
+      || player.highestSingularityCount >= 100)
   ) {
     const cheapet = []
 

@@ -609,6 +609,9 @@ export interface Player {
 
   singularityCount: number
   highestSingularityCount: number
+  seenPenaltySpikeMessage: boolean
+  seenS100Message: boolean
+  seenS150Message: boolean
   singularityCounter: number
   goldenQuarks: number
   quarksThisSingularity: number
@@ -713,6 +716,7 @@ export interface GlobalVariables {
   globalCrystalMultiplier: Decimal
   globalMythosMultiplier: Decimal
   grandmasterMultiplier: Decimal
+  globalAtomMultiplier: Decimal
 
   atomsMultiplier: Decimal
 

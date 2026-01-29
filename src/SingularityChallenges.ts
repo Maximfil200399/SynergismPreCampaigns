@@ -323,7 +323,7 @@ export const singularityChallengeData: Record<
     unlockSingularity: 40,
     HTMLTag: 'oneChallengeCap',
     singularityRequirement: (baseReq: number, completions: number) => {
-      return Math.min(baseReq + 11 * completions, 276)
+      return Math.min(baseReq + 11 * completions, 275) // Only +1 sing, though e2x25 is already very hard as it is
     },
     scalingrewardcount: 2,
     uniquerewardcount: 4,
@@ -410,7 +410,7 @@ export const singularityChallengeData: Record<
     unlockSingularity: 216,
     HTMLTag: 'limitedTime',
     singularityRequirement: (baseReq: number, completions: number) => {
-      return Math.min(baseReq + 3 * completions, 277)
+      return Math.min(baseReq + 3 * completions, 276) // Stop it from going above the limit. 277 is meant to be special, so e6x26 is only +1 sing
     },
     scalingrewardcount: 3,
     uniquerewardcount: 3,
@@ -431,7 +431,7 @@ export const singularityChallengeData: Record<
     unlockSingularity: 273,
     HTMLTag: 'sadisticPrequel',
     singularityRequirement: (baseReq: number, completions: number) => {
-      return baseReq + 3 * completions
+      return baseReq + 3 * completions //e7x30 takes place in s222, and estimates put it at a year, so I don't think it's even possible
     },
     scalingrewardcount: 2,
     uniquerewardcount: 4,

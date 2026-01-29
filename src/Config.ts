@@ -1,6 +1,6 @@
 declare const PROD: boolean | undefined
 
-export const version = '3.1.2m January 7 2026: The \'I want to play Synergism before Campaigns existed\' Update'
+export const version = '1.0.0 - The First Mod-specific Version'
 
 /**
  * PSEUDO DO NOT CHANGE THIS LINE

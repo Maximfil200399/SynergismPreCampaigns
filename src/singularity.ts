@@ -278,7 +278,7 @@ export class SingularityUpgrade extends DynamicUpgrade {
     let GQBudget = player.goldenQuarks
 
     if (event.shiftKey) {
-      maxPurchasable = 1000000 // x10 the cap for my sanity if I somehow get far enough for this to matter
+      maxPurchasable = 1000000
       const buy = Number(
         await Prompt(
           i18next.t('singularity.goldenQuarks.spendPrompt', {
@@ -1354,7 +1354,15 @@ export const singularityData: Record<
         }
       }
     },
-    qualityOfLife: true
+    qualityOfLife: true, // This is technically not QoL, but lore-wise you're rewriting the code itself to gain these benefits
+    cacheUpdates: [
+      () => {
+        G.ambrosiaCurrStats.ambrosiaLuck = calculateAmbrosiaLuck().value
+      },
+      () => {
+        G.ambrosiaCurrStats.ambrosiaGenerationSpeed = calculateAmbrosiaGenerationSpeed().value
+      }
+    ]
   },
   oneMind: {
     maxLevel: 1,
@@ -1630,12 +1638,17 @@ export const singularityPerks: SingularityPerk[] = [
     name: () => {
       return i18next.t('singularity.perks.goldenCoins.name')
     },
-    levels: [1],
+    levels: [1], // BUFF: Now boosts all non-Tesseract buildings by amount, and Ant production by amount2
     description: () => {
       return i18next.t('singularity.perks.goldenCoins.default', {
         amount: format(
           Math.pow(player.goldenQuarks + 1, 1.5)
             * Math.pow(player.highestSingularityCount + 1, 2),
+          2
+        ),
+        amount2: format(
+          Math.pow(player.goldenQuarks + 1, 0.5)
+            * Math.pow(player.highestSingularityCount + 1, 0.5),
           2
         )
       })
@@ -1858,9 +1871,11 @@ export const singularityPerks: SingularityPerk[] = [
     name: () => {
       return i18next.t('singularity.perks.forTheLoveOfTheAntGod.name')
     },
-    levels: [10, 15, 25],
+    levels: [10, 15, 20, 25], // Technically this isn't improved at s20, but the game never mentions starting with e100 crumbs once you reach s20
     description: (n: number, levels: number[]) => {
-      if (n >= levels[2]) {
+      if (n >= levels[3]) {
+        return i18next.t('singularity.perks.forTheLoveOfTheAntGod.hasLevel3')
+      } else if (n >= levels[2]) {
         return i18next.t('singularity.perks.forTheLoveOfTheAntGod.hasLevel2')
       } else if (n >= levels[1]) {
         return i18next.t('singularity.perks.forTheLoveOfTheAntGod.hasLevel1')
@@ -2031,7 +2046,7 @@ export const singularityPerks: SingularityPerk[] = [
     name: () => {
       return i18next.t('singularity.perks.wowCubeAutomatedShipping.name')
     },
-    levels: [50, 150],
+    levels: [50, 100], // BUFF: Reduced level 2's requirement to s100 from s150
     description: (n: number, levels: number[]) => {
       if (n >= levels[1]) {
         return i18next.t(
@@ -2067,7 +2082,7 @@ export const singularityPerks: SingularityPerk[] = [
     levels: [100],
     description: () => {
       return i18next.t('singularity.perks.goldenRevolution.default', {
-        current: format(Math.min(100, 0.4 * player.singularityCount), 1)
+        current: format(0.4 * player.singularityCount, 1)
       })
     },
     ID: 'goldenRevolution'
@@ -2079,7 +2094,7 @@ export const singularityPerks: SingularityPerk[] = [
     levels: [100],
     description: () => {
       return i18next.t('singularity.perks.goldenRevolutionII.default', {
-        current: format(Math.min(50, 0.2 * player.singularityCount), 1)
+        current: format(0.2 * player.singularityCount, 1)
       })
     },
     ID: 'goldenRevolution2'
@@ -2091,7 +2106,7 @@ export const singularityPerks: SingularityPerk[] = [
     levels: [100],
     description: () => {
       return i18next.t('singularity.perks.goldenRevolutionIII.default', {
-        current: format(Math.min(500, 2 * player.singularityCount))
+        current: format(2 * player.singularityCount)
       })
     },
     ID: 'goldenRevolution3'
@@ -2242,6 +2257,26 @@ export const singularityPerks: SingularityPerk[] = [
       return i18next.t('singularity.perks.permanentBenefaction.default')
     },
     ID: 'permanentBenefaction'
+  },
+  {
+    name: () => {
+      return i18next.t('singularity.perks.singularityStory.name')
+    },
+    levels: [273, 274, 275, 276, 277], // This perk has no effect, but I thought it would be cool to write a little story for the final 5 singularities
+    description: (n: number, levels: number[]) => {
+      if (n >= levels[4]) {
+        return i18next.t('singularity.perks.singularityStory.s277')
+      } else if (n >= levels[3]) {
+        return i18next.t('singularity.perks.singularityStory.s276')
+      } else if (n >= levels[2]) {
+        return i18next.t('singularity.perks.singularityStory.s275')
+      } else if (n >= levels[1]) {
+        return i18next.t('singularity.perks.singularityStory.s274')
+      } else {
+        return i18next.t('singularity.perks.singularityStory.default')
+      }
+    },
+    ID: 'singularityStory'
   }
 ]
 
@@ -2475,9 +2510,10 @@ export async function buyGoldenQuarks (): Promise<void> {
   let cost: number
 
   if (buyAmount === -1) {
-    cost = maxBuy * goldenQuarkCost.cost
+    buyAmount = maxBuy
+    cost = buyAmount * goldenQuarkCost.cost
     player.worlds.sub(cost)
-    player.goldenQuarks += maxBuy
+    player.goldenQuarks += buyAmount
   } else {
     cost = buyAmount * goldenQuarkCost.cost
     player.worlds.sub(cost)
@@ -2486,7 +2522,7 @@ export async function buyGoldenQuarks (): Promise<void> {
 
   return Alert(
     i18next.t('singularity.goldenQuarks.transaction', {
-      spent: format(maxBuy, 0, true),
+      spent: format(buyAmount, 0, true),
       cost: format(cost, 0, true)
     })
   )

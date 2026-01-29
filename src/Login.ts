@@ -172,24 +172,22 @@ export async function handleLogin () {
     document.getElementById('accountSubTab')?.appendChild(logoutElement)
   }
 
-  const response = await fetch('https://synergism.cc/api/v1/users/me').catch(
-    () => new Response(JSON.stringify({ member: null, globalBonus: 0, personalBonus: 0 }), { status: 401 })
-  )
+  const response = null // Possibly dangerous to have this as null, but it works
 
-  if (!response.ok) {
+  if (!response) {
     currentBonus.textContent =
       'Existing gives you a bonus of 100% more Quarks!'
     return
   }
 
-  const { globalBonus, member, personalBonus, accountType } = await response.json() as
+  const { globalBonus, member, personalBonus, accountType } = await response as
     | SynergismDiscordUserAPIResponse
     | SynergismPatreonUserAPIResponse
     | SynergismNotLoggedInResponse
 
   setQuarkBonus(100 * (1 + globalBonus / 100) * (1 + personalBonus / 100) - 100)
   player.worlds = new QuarkHandler(Number(player.worlds))
-  loggedIn = accountType !== 'none' && response.ok
+  loggedIn = accountType !== 'none' && response
 
   currentBonus.textContent = `Generous patrons give you a bonus of ${globalBonus}% more Quarks!`
 

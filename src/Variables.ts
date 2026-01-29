@@ -154,6 +154,7 @@ export const Globals: GlobalVariables = {
   globalCrystalMultiplier: new Decimal(1),
   globalMythosMultiplier: new Decimal(0.01),
   grandmasterMultiplier: new Decimal(1),
+  globalAtomMultiplier: new Decimal(1),
 
   atomsMultiplier: new Decimal(1),
 

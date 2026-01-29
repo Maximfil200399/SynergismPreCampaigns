@@ -466,7 +466,7 @@ export const revealStuff = () => {
   }
 
   ;(player.highestSingularityCount >= 50 && player.singularityCount < player.highestSingularityCount)
-      || player.highestSingularityCount >= 150 // Auto Cube Upgrades
+      || player.highestSingularityCount >= 100 // Auto Cube Upgrades
     ? DOMCacheGetOrSet('toggleAutoCubeUpgrades').style.display = 'block'
     : DOMCacheGetOrSet('toggleAutoCubeUpgrades').style.display = 'none'
   ;(player.highestSingularityCount >= 100 && player.singularityCount < player.highestSingularityCount)

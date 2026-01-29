@@ -795,7 +795,7 @@ export const player: Player = {
   wowTesseracts: new WowTesseracts(0),
   wowHypercubes: new WowHypercubes(0),
   wowPlatonicCubes: new WowPlatonicCubes(0),
-  maxPlatToggle: false,
+  maxPlatToggle: true,
   wowAbyssals: 0,
   wowOcteracts: 0,
   totalWowOcteracts: 0,
@@ -995,6 +995,9 @@ export const player: Player = {
   },
   singularityCount: 0,
   highestSingularityCount: 0,
+  seenPenaltySpikeMessage: false,
+  seenS100Message: false,
+  seenS150Message: false,
   singularityCounter: 0,
   goldenQuarks: 0,
   quarksThisSingularity: 0,
@@ -2681,11 +2684,17 @@ const loadSynergy = () => {
       )
       DOMCacheGetOrSet('toggleautoenhance').style.border = '2px solid red'
     }
-    player.maxPlatToggle = false // Lint doesnt like it being inside if
-    DOMCacheGetOrSet('maxPlatToggle').textContent = i18next.t(
+    if (player.maxPlatToggle) {
+      DOMCacheGetOrSet('maxPlatToggle').textContent = i18next.t(
+      'toggles.buyMaxOn'
+      )
+      DOMCacheGetOrSet('maxPlatToggle').style.color = 'gold'
+    } else {
+      DOMCacheGetOrSet('maxPlatToggle').textContent = i18next.t(
       'toggles.buyMaxOff'
-    )
-    DOMCacheGetOrSet('maxPlatToggle').style.color = 'white'
+      )
+      DOMCacheGetOrSet('maxPlatToggle').style.color = 'white'
+    }
     if (player.autoAscend) {
       DOMCacheGetOrSet('ascensionAutoEnable').textContent = i18next.t(
         'corruptions.autoAscend.on'
@@ -3963,6 +3972,13 @@ export const multipliers = (): void => {
     Decimal.pow(2.5, player.researches[27])
   )
 
+  if (player.highestSingularityCount > 0) {
+    G.globalCrystalMultiplier = G.globalCrystalMultiplier.times(
+        Math.pow(player.goldenQuarks + 1, 1.5)
+        * Math.pow(player.highestSingularityCount + 1, 2)
+    )
+  }
+
   G.globalMythosMultiplier = new Decimal(1)
 
   if (player.upgrades[37] > 0.5) {
@@ -4005,6 +4021,12 @@ export const multipliers = (): void => {
       Decimal.pow(G.reincarnationMultiplier, 1 / 250)
     )
   }
+  if (player.highestSingularityCount > 0 ) {
+    G.globalMythosMultiplier = G.globalMythosMultiplier.times(
+      Math.pow(player.goldenQuarks + 1, 1.5)
+      * Math.pow(player.highestSingularityCount + 1, 2)
+    )
+  }
   G.grandmasterMultiplier = new Decimal(1)
   G.totalMythosOwned = player.firstOwnedMythos
     + player.secondOwnedMythos
@@ -4040,6 +4062,15 @@ export const multipliers = (): void => {
       Decimal.pow('1e1000', Math.min(1000, G.buildingPower - 1))
     )
   }
+
+  G.globalAtomMultiplier = new Decimal('1')
+  if (player.highestSingularityCount > 0) {
+    G.globalAtomMultiplier = G.globalAtomMultiplier.times(
+      Math.pow(player.goldenQuarks + 1, 1.5)
+      * Math.pow(player.highestSingularityCount + 1, 2)
+    )
+  }
+
 
   G.globalConstantMult = new Decimal('1')
   G.globalConstantMult = G.globalConstantMult.times(
@@ -4238,18 +4269,23 @@ export const resourceGain = (dt: number): void => {
   G.produceFifthParticles = player.fifthGeneratedParticles
     .add(player.fifthOwnedParticles)
     .times(player.fifthProduceParticles)
+    .times(G.globalAtomMultiplier)
   G.produceFourthParticles = player.fourthGeneratedParticles
     .add(player.fourthOwnedParticles)
     .times(player.fourthProduceParticles)
+    .times(G.globalAtomMultiplier)
   G.produceThirdParticles = player.thirdGeneratedParticles
     .add(player.thirdOwnedParticles)
     .times(player.thirdProduceParticles)
+    .times(G.globalAtomMultiplier)
   G.produceSecondParticles = player.secondGeneratedParticles
     .add(player.secondOwnedParticles)
     .times(player.secondProduceParticles)
+    .times(G.globalAtomMultiplier)
   G.produceFirstParticles = player.firstGeneratedParticles
     .add(player.firstOwnedParticles)
     .times(player.firstProduceParticles)
+    .times(G.globalAtomMultiplier)
     .times(pm)
   player.fourthGeneratedParticles = player.fourthGeneratedParticles.add(
     G.produceFifthParticles.times(dt / 0.025)
@@ -4268,6 +4304,7 @@ export const resourceGain = (dt: number): void => {
   G.produceParticles = player.firstGeneratedParticles
     .add(player.firstOwnedParticles)
     .times(player.firstProduceParticles)
+    .times(G.globalAtomMultiplier)
     .times(pm)
   G.producePerSecondParticles = G.produceParticles.times(40)
 
@@ -4636,6 +4673,12 @@ export const updateAntMultipliers = (): void => {
   }
   if (player.achievements[274] > 0) {
     G.globalAntMult = G.globalAntMult.times(4.44)
+  }
+  if (player.highestSingularityCount > 0) {
+    G.globalAntMult = G.globalAntMult.times(
+      Math.pow(player.goldenQuarks + 1, 0.5)
+      * Math.pow(player.highestSingularityCount + 1, 0.5)
+    )
   }
 
   if (player.usedCorruptions[7] >= 14) {
@@ -5074,7 +5117,7 @@ export const resetCheck = async (
       return Alert(i18next.t('main.noAntiquity'))
     }
 
-    const thankSing = 277 // 277 instead of 300. This is my ultimate goal
+    const thankSing = 277 // 277 instead of 300
 
     if (player.insideSingularityChallenge) {
       return Alert(i18next.t('main.insideSingularityChallenge'))
@@ -5125,6 +5168,27 @@ export const resetCheck = async (
     } else {
       await singularity()
       saveSynergy()
+      if (player.highestSingularityCount > 149 && !player.seenS150Message) { // Notify the player about the altered penalties (cube/asc speed scale worse; off/obt capped)
+        player.seenS150Message = true
+        return Alert
+        (i18next.t('main.welcomeToSingularity150',
+        {x: format(player.singularityCount)}
+        ))
+      }
+      if (player.highestSingularityCount > 99 && !player.seenS100Message) { // Congratulate the player for reaching S100 and mention the extra cube penalty
+        player.seenS100Message = true
+        return Alert
+        (i18next.t('main.welcomeToSingularity100',
+        {x: format(player.singularityCount)}
+        ))
+      }
+      if (player.highestSingularityCount > 10 && !player.seenPenaltySpikeMessage) { // Warn the player about penalty spikes and how they only get worse
+        player.seenPenaltySpikeMessage = true
+        return Alert
+        (i18next.t('main.firstPenaltySpike',
+        {x: format(player.singularityCount)}
+        ))
+      }
       return Alert(
         i18next.t('main.welcomeToSingularity', {
           x: format(player.singularityCount)
@@ -6375,11 +6439,11 @@ window.addEventListener('load', async () => {
         )
       }-${lastUpdated.getFullYear()}].`
       : ''
-    ver.textContent = `You're ${testing ? 'testing' : 'playing'} v${version} - The Alternate Reality${textUpdate} ${
+    ver.textContent = `You're ${testing ? 'testing' : 'playing'} NC-v${version} - The Campaign-less Reality${textUpdate} ${
       testing ? i18next.t('testing.saveInLive') : ''
     }`
   }
-  document.title = `Synergism v${version}`
+  document.title = `Synergism NC-v${version}`
 
   generateEventHandlers()
   reloadShit()

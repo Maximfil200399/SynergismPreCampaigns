@@ -1320,6 +1320,7 @@ export const singularity = async (setSingNumber = -1): Promise<void> => {
   hold.notation = player.notation
   hold.firstPlayed = player.firstPlayed
   hold.autoCubeUpgradesToggle = player.autoCubeUpgradesToggle
+  hold.maxPlatToggle = player.maxPlatToggle
   hold.autoPlatonicUpgradesToggle = player.autoPlatonicUpgradesToggle
   hold.insideSingularityChallenge = player.insideSingularityChallenge
   hold.ultimatePixels = player.ultimatePixels

@@ -666,7 +666,7 @@ export const blueberryUpgradeData: Record<
       }
     ]
   },
-  ambrosiaPatreon: {
+  ambrosiaPatreon: { // The patreon bonus technically doesn't exist, but this still gives a 100% boost anyway
     maxLevel: 1,
     costPerLevel: 1,
     blueberryCost: 0,
