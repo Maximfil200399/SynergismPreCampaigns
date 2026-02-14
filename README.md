@@ -25,7 +25,7 @@ To get a list of available commands in the Makefile, run `make help` or just `ma
 
 ## Current changes:
 - For a more complete list, check the wiki.
-- Locked the Patreon bonus to 100% (now called an "existence" bonus) and disabled PseudoCoin upgrades (the event/pseudocoin tabs still exist because poor coding skills)
+- Locked the Patreon bonus to 100% (now called an "existence" bonus) and removed the Event/PseudoCoin tabs
 - Rewrote many descriptions, often for fun. Also added i18n to Platonic Upgrades
 - Made an awful attempt at improving Stats for Nerds (it kinda worked???)
 - Singularities 11, 100, and 150 have something to tell you
