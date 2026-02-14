@@ -426,7 +426,7 @@ export const octeractData: Record<keyof Player['octeractUpgrades'], IOcteractDat
     costPerLevel: 1e5,
     effect: (n: number) => {
       return {
-        bonus: n / 2000,
+        bonus: n / 2000, // Not a buff, this upgrade was (to my knowledge) always bugged and actually gave 0.05% per level
         get desc () {
           return i18next.t('octeract.data.octeractImprovedAscensionSpeed2.effect', { n: format(n / 20, 2, true) })
         }

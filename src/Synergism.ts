@@ -1989,9 +1989,10 @@ const loadSynergy = () => {
     // checkVariablesOnLoad(data)
 
     if (player.ascensionCount === 0) {
-      if (player.prestigeCount > 0) {
-        player.ascensionCounter = 86400 * 90
-      }
+    // To whoever wrote this code below: What the fuck?
+    //  if (player.prestigeCount > 0) {
+    //    player.ascensionCounter = 86400 * 90
+    //  }
       /*player.cubeUpgrades = [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

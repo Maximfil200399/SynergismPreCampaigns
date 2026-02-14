@@ -1574,7 +1574,7 @@ export const loadStatisticsGoldenQuarkMultipliers = () => {
     6: { acc: 2, desc: 'EXALT 1 - No Singularity Upgrades:' },
     7: { acc: 2, desc: 'Other funny stat that just says x1.00:' },
     8: { acc: 2, desc: 'Singularity Fast Forwards:' },
-    9: { acc: 2, desc: 'Golden Revolution II:' },
+    9: { acc: 2, desc: 'Golden Revolution I:' },
     10: { acc: 2, desc: 'Immaculate Alchemy:' },
     11: { acc: 2, desc: unconvertedQuarks } // Golden Revolution IV converts pending GQ to held GQ. Originally this was done by subtracting quarks this sing...
   } // ...but that behavior was somewhat changed (I added an "unconverted quarks" property). The variable text *should* reduce confusion on quarks this sing...

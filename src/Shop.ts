@@ -1445,7 +1445,7 @@ export const friendlyShopName = (input: ShopUpgradeNames) => {
     shopCashGrabUltra: 'It\'s the FINAL CASHGRAB!',
     shopAmbrosiaAccelerator: 'An Ambrosial Accelerator!',
     shopEXUltra: 'It\'s the FINAL EX!',
-    shopChronometerS: 'The FINAL Chronometer',
+    shopChronometerS: 'Chronometer S',
     shopAmbrosiaUltra: 'The EXALTED Ambrosia Luck Increaser!',
     shopSingularitySpeedup: 'Singularity Timed-Perks Speedup',
     shopSingularityPotency: 'Singularity Passives Potency',

@@ -1,6 +1,6 @@
 import Decimal from 'break_infinity.js'
 import i18next from 'i18next'
-import { showSacrifice } from './Ants'
+import { calculateCrumbToCoinExp, showSacrifice } from './Ants'
 import { DOMCacheGetOrSet } from './Cache/DOM'
 import {
   calcAscensionCount,
@@ -15,7 +15,6 @@ import {
   calculateRecycleMultiplier,
   calculateRequiredBlueberryTime,
   calculateRuneExpToLevel,
-  calculateSigmoidExponential,
   calculateSummationLinear,
   calculateSummationNonLinear,
   calculateTimeAcceleration,
@@ -813,11 +812,15 @@ export const visualUpdateAnts = () => {
   if (G.currentTab !== Tabs.AntHill) {
     return
   }
-  DOMCacheGetOrSet('crumbcount').textContent = i18next.t(
+  DOMCacheGetOrSet('crumbcount').textContent = i18next.t( 
     'ants.youHaveGalacticCrumbs',
     {
       x: format(player.antPoints, 2),
       y: format(G.antOneProduce, 2),
+      z: format(Decimal.pow(Decimal.max(1, player.antPoints), calculateCrumbToCoinExp()))
+    } // FIX for z: Display the correct coin multiplier. C15 divides the coin ant's effect by 10000 but this never said that
+  )
+/*
       z: format(
         Decimal.pow(
           Decimal.max(1, player.antPoints),
@@ -828,8 +831,7 @@ export const visualUpdateAnts = () => {
             )
         )
       )
-    }
-  )
+*/
 
   const mode = player.autoAntSacrificeMode === 2
     ? i18next.t('ants.modeRealTime')

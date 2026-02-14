@@ -80,7 +80,7 @@ const subtabInfo: Record<Tabs, SubTab> = {
         buttonID: 'switchSettingSubTab7'
       },
       { subTabID: 'hotkeys', unlocked: true, buttonID: 'switchSettingSubTab8' },
-      { subTabID: 'accountSubTab', unlocked: true, buttonID: 'switchSettingSubTab9' }
+    //  { subTabID: 'accountSubTab', unlocked: true, buttonID: 'switchSettingSubTab9' }
     ]
   },
   [Tabs.Shop]: { subTabList: [] },

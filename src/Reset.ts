@@ -893,7 +893,9 @@ export const reset = (input: resetNames, fast = false, from = 'unknown') => {
 }
 
 /**
- * Computes which achievements in 274-280 are achievable given current singularity number
+ * Computes which achievements in 274-287 are achievable given current singularity number
+ * 274~280 unlocked at: 1, 2, 3, 4, 5, 7, 10
+ * 281~287 unlocked at: 25, 50, 100, 151, 200, 256, 273
  */
 export const updateSingularityAchievements = (): void => {
   if (player.highestSingularityCount >= 1) {
@@ -916,6 +918,27 @@ export const updateSingularityAchievements = (): void => {
   }
   if (player.highestSingularityCount >= 10) {
     achievementaward(280)
+  }
+  if (player.highestSingularityCount >= 25) {
+    achievementaward(281)
+  }
+  if (player.highestSingularityCount >= 50) {
+    achievementaward(282)
+  }
+  if (player.highestSingularityCount >= 100) {
+    achievementaward(283)
+  }
+  if (player.highestSingularityCount >= 151) {
+    achievementaward(284)
+  }
+  if (player.highestSingularityCount >= 200) {
+    achievementaward(285)
+  }
+  if (player.highestSingularityCount >= 256) {
+    achievementaward(286)
+  }
+  if (player.highestSingularityCount >= 273) {
+    achievementaward(287)
   }
 }
 

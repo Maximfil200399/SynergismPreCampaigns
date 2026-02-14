@@ -1,6 +1,6 @@
 declare const PROD: boolean | undefined
 
-export const version = '1.0.0 - The First Mod-specific Version'
+export const version = '1.0.1 - Goodbye, Event and PseudoCoin Tabs'
 
 /**
  * PSEUDO DO NOT CHANGE THIS LINE

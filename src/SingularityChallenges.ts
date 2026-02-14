@@ -371,10 +371,9 @@ export const singularityChallengeData: Record<
       return baseReq + 10 * completions
     },
     scalingrewardcount: 1,
-    uniquerewardcount: 4,
+    uniquerewardcount: 3,
     effect: (n: number) => {
       return {
-        ultimateProgressBarUnlock: (n > 0),
         ascensionSpeedMult: (0.1 * n) / 100,
         hepteractCap: n > 0,
         exaltBonus: n >= 20,

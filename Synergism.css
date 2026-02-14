@@ -677,6 +677,14 @@ nav button {
     background-color: var(--hovershop-color);
 }
 
+#pseudoCoinstab {
+    display: none;
+}
+
+#eventtab {
+    display: none;
+}
+
 button.isEvent:hover {
     background-color: gold;
 }

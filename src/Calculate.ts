@@ -7,7 +7,7 @@ import { BuffType, calculateEventSourceBuff } from './Event'
 import { addTimers, automaticTools } from './Helper'
 import { hepteractEffective } from './Hepteracts'
 import { disableHotkeys, enableHotkeys } from './Hotkeys'
-import { PCoinUpgradeEffects } from './PseudoCoinUpgrades'
+
 import { getQuarkBonus, quarkHandler } from './Quark'
 import { reset } from './Reset'
 import { calculateSingularityDebuff } from './singularity'
@@ -343,7 +343,7 @@ export const calculateMaxRunes = (i: number) => {
 }
 
 export const calculateEffectiveIALevel = () => {
-  let bonus = PCoinUpgradeEffects.INSTANT_UNLOCK_2 ? 6 : 0
+  let bonus = 0
   bonus += player.cubeUpgrades[73]
   const totalRawLevel = player.runelevels[5] + bonus
   return (
@@ -1367,7 +1367,6 @@ export const calculateOffline = (forceTime = 0) => {
   const maximumTimer = (86400 * 3
     + 7200 * 2 * player.researches[31]
     + 7200 * 2 * player.researches[32])
-    * PCoinUpgradeEffects.OFFLINE_TIMER_CAP_BUFF
 
   const updatedTime = Date.now()
   const timeAdd = Math.min(
@@ -1710,7 +1709,7 @@ export const calculateAllCubeMultiplier = () => {
   }
   const arr = [
     // Pseudocoin Multiplier
-    PCoinUpgradeEffects.CUBE_BUFF,
+    1,
     // Ascension Time Multiplier to cubes
     Math.pow(Math.min(1, player.ascensionCounter / 10), 2) * (1 + ((1 / 4) * player.achievements[204] + (1 / 4) * player.achievements[211] + (1 / 2) * player.achievements[218]) * Math.max(0, player.ascensionCounter / 10 - 1)),
     // Sun and Moon achievements
@@ -1864,6 +1863,7 @@ export const calculateCubeMultiplier = (score = -1) => {
     + Math.pow(1.03, Math.log10(Math.max(1, player.wowAbyssals)))
       * player.cubeUpgrades[63]
     - player.cubeUpgrades[63]
+    // Who wrote it like this?????
     // Total Multipliers to cubes: 15
   ]
 
@@ -2062,7 +2062,7 @@ export const calculateHepteractMultiplier = (score = -1) => {
 export const getOcteractValueMultipliers = () => {
   const corruptionLevelSum = sumContents(player.usedCorruptions.slice(2, 10))
   return [
-    PCoinUpgradeEffects.CUBE_BUFF,
+    1,
     1 + (1.5 * player.shopUpgrades.seasonPass3) / 100,
     1 + (0.75 * player.shopUpgrades.seasonPassY) / 100,
     1 + (player.shopUpgrades.seasonPassZ * player.singularityCount) / 100,
@@ -2480,7 +2480,7 @@ export const calculateGoldenQuarkMultiplier = (computeMultiplier = false) => {
   }
 
   const arr = [
-    PCoinUpgradeEffects.GOLDEN_QUARK_BUFF, // Golden Quark Buff from PseudoCoins
+    1, // Golden Quark Buff from PseudoCoins
     1 + Math.max(0, Math.log10(player.challenge15Exponent + 1) - 20) / 2, // Challenge 15 Exponent
     1 + getQuarkBonus() / 100, // Patreon Bonus
     +player.singularityUpgrades.goldenQuarks1.getEffect().bonus, // Golden Quarks I
@@ -3323,7 +3323,7 @@ export const calculateAdditiveLuckMult = () => {
 export const calculateAmbrosiaLuck = () => {
   const arr = [
     100, // Base
-    PCoinUpgradeEffects.AMBROSIA_LUCK_BUFF, // Platonic Coin Upgrade
+    0, // Platonic Coin Upgrade
     calculateSingularityAmbrosiaLuckMilestoneBonus(), // Ambrosia Luck Milestones
     calculateAmbrosiaLuckShopUpgrade(), // Ambrosia Luck from Shop Upgrades (I-IV)
     calculateAmbrosiaLuckSingularityUpgrade(), // Ambrosia Luck from Singularity Upgrades (I-IV)
@@ -3371,7 +3371,7 @@ export const calculateBlueberryInventory = () => {
 export const calculateAmbrosiaGenerationSpeed = () => {
   const arr = [
     +(player.visitedAmbrosiaSubtab),
-    PCoinUpgradeEffects.AMBROSIA_GENERATION_BUFF,
+    1,
     calculateBlueberryInventory().value,
     calculateAmbrosiaGenerationShopUpgrade(),
     calculateAmbrosiaGenerationSingularityUpgrade(),
@@ -3480,11 +3480,11 @@ export const derpsmithCornucopiaBonus = () => {
 }
 
 export const isIARuneUnlocked = () => {
-  return player.shopUpgrades.infiniteAscent > 0 || PCoinUpgradeEffects.INSTANT_UNLOCK_2
+  return player.shopUpgrades.infiniteAscent > 0
 }
 
 export const isShopTalismanUnlocked = () => {
-  return player.shopUpgrades.shopTalisman > 0 || PCoinUpgradeEffects.INSTANT_UNLOCK_1
+  return player.shopUpgrades.shopTalisman > 0
 }
 
 export const sing6Mult = () => {

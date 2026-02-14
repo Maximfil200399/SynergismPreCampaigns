@@ -6,7 +6,7 @@ import { DOMCacheGetOrSet } from './Cache/DOM'
 import { octeractGainPerSecond } from './Calculate'
 import { testing, version } from './Config'
 import { addTimers } from './Helper'
-import { PCoinUpgradeEffects } from './PseudoCoinUpgrades'
+
 import { getQuarkBonus, quarkHandler } from './Quark'
 import { Seed, seededBetween, seededRandom } from './RNG'
 import { playerJsonSchema } from './saves/PlayerJsonSchema'
@@ -576,7 +576,7 @@ export const promocodes = async (input: string | null, amount?: number) => {
         rolls *= 2
       }
 
-      rolls *= PCoinUpgradeEffects.FREE_UPGRADE_PROMOCODE_BUFF
+
 
       rolls = Math.floor(rolls)
 
@@ -1014,7 +1014,7 @@ export const addCodeMaxUses = () => {
   ]
 
   let maxUses = sumContents(arr)
-  maxUses *= PCoinUpgradeEffects.ADD_CODE_CAP_BUFF
+
 
   arr.push(addCodeSingularityPerkBonus())
   maxUses *= addCodeSingularityPerkBonus()

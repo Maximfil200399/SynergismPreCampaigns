@@ -9,6 +9,8 @@ import {
   calculateMaxRunes,
   calculateTimeAcceleration,
   calculateTotalOcteractCubeBonus,
+  calculateTotalOcteractObtainiumBonus,
+  calculateTotalOcteractOfferingBonus,
   calculateTotalOcteractQuarkBonus,
   isIARuneUnlocked,
   octeractGainPerSecond
@@ -137,6 +139,12 @@ export const generateExportSummary = async (): Promise<void> => {
     octeract = `${octeract}Total Generated Octeracts: ${format(player.totalWowOcteracts, 2, true)}\n`
     octeract = `${octeract}Octeract Cube Bonus: ${format(100 * (calculateTotalOcteractCubeBonus() - 1), 2, true)}%\n`
     octeract = `${octeract}Octeract Quark Bonus: ${format(100 * (calculateTotalOcteractQuarkBonus() - 1), 2, true)}%\n`
+    if (player.singularityChallenges.noOcteracts.completions >= 1) {
+      octeract = `${octeract}Octeract Offering Bonus: ${format(100 * (calculateTotalOcteractOfferingBonus() - 1), 2, true)}\n`
+    }
+    if (player.singularityChallenges.noOcteracts.completions >= 10) {
+      octeract = `${octeract}Octeract Obtainium Bonus: ${format(100 * (calculateTotalOcteractObtainiumBonus() - 1), 2, true)}\n`
+    }
   }
 
   // Singularity Subportion!
@@ -152,6 +160,27 @@ export const generateExportSummary = async (): Promise<void> => {
       format(calculateEffectiveSingularities(), 2, true)
     }\n`
     singularity = `${singularity}Antiquities of Ant God: ${(player.runelevels[6] > 0) ? '✔' : '✖'}\n`
+  }
+
+  // EXALT Subportion!
+  // TODO: Improve this because what the fuck is wrong with you 6030
+  let exalt = ''
+  const ex1 = player.singularityChallenges.noSingularityUpgrades.completions
+  const ex2 = player.singularityChallenges.oneChallengeCap.completions
+  const ex3 = player.singularityChallenges.limitedAscensions.completions
+  const ex4 = player.singularityChallenges.noOcteracts.completions
+  const ex5 = player.singularityChallenges.noAmbrosiaUpgrades.completions
+  const ex6 = player.singularityChallenges.limitedTime.completions
+  const ex7 = player.singularityChallenges.sadisticPrequel.completions
+  if (player.highestSingularityCount >= 25) {
+    exalt = '===== EXALTS =====\n'
+    exalt = `${exalt}No Singularity Upgrades: ${ex1}/30\n`
+    exalt = `${exalt}One Challenge Cap: ${ex2}/25\n`
+    exalt = `${exalt}Limited Ascensions: ${ex3}/25\n`
+    exalt = `${exalt}No Octeract Effects: ${ex4}/15\n`
+    exalt = `${exalt}No Ambrosia Effects: ${ex5}/20\n`
+    exalt = `${exalt}The Grand Singularity Speedrun: ${ex6}/25\n`
+    exalt = `${exalt}SADISTIC EXALT III - The Prequel: ${ex7}/30\n`
   }
 
   // Ascension Subportion!

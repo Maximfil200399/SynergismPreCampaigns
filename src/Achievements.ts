@@ -49,7 +49,8 @@ export const achievementpointvalues = [
   50, 75, 75, 75, 100, 100, 150,
   50, 75, 75, 75, 100, 100, 150,
   50, 75, 75, 75, 100, 100, 150,
-  10, 10, 20, 20, 30, 40, 50
+  10, 10, 20, 20, 30, 40, 50,
+  0, 0, 0, 0, 0, 0, 0 // No AP reward for 281~287; these are purely cosmetic
 ]
 
 export const totalachievementpoints = achievementpointvalues.reduce((a, b) => a + b, 0)

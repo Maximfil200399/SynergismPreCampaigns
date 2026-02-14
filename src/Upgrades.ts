@@ -63,7 +63,7 @@ const upgradetexts = [
     ),
   () => format(Decimal.pow(1.15, G.freeAccelerator), 2),
   () => format(Decimal.pow(1.15, G.freeAccelerator), 2),
-  () => format(Decimal.pow(G.acceleratorEffect, 1 / 3), 2),
+  () => format(Decimal.min(Decimal.pow(10, 1e33), Decimal.pow(G.acceleratorEffect, 1 / 3)), 2),
   () => null,
   () => format(Decimal.min(1e125, player.transcendShards.add(1))),
   () => format(Decimal.min(1e200, player.transcendPoints.times(1e30).add(1))),
